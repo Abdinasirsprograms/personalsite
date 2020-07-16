@@ -1,6 +1,7 @@
 import os
 import json
 import collections
+import csv
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
@@ -13,7 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # print(lines)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-links = ['https://www.dayniiile.com/category/world-news/']
+links = ['https://www.hiiraan.com/op4/2020/July/179053/moving_forward_while_standing_still.aspx']
 class navigate_main_url:
     def __init__(self, link):
         option = webdriver.firefox.options.Options()
@@ -32,8 +33,25 @@ class navigate_main_url:
 
     def hiiraan(self):
         ''' assumption is article links are scrapped from rss feed '''
-        content = self.driver.find_elements_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]/*')
-        self.article_data = [{f'{x.tag_name}:{x.text}'} for x in content if x.text]
+        get_author_js = '''
+            var text = '';
+            var childNodes = arguments[0].childNodes; // child nodes includes Element and Text Node
+            text = childNodes[0].textContent
+            return text;
+        '''
+        get_date_js = '''
+            var text = '';
+            var childNodes = arguments[0].childNodes; // child nodes includes Element and Text Node
+            text = childNodes[2].textContent
+            return text;
+        '''
+        content = self.driver.find_elements_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[not(child::img)]')
+        author_and_date = self.driver.find_element_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[1]')
+        author = self.driver.execute_script(get_author_js, author_and_date)
+        date = self.driver.execute_script(get_date_js, author_and_date)
+        self.article_data = [{x.tag_name:x.text} for x in content if x.text and x.text != author_and_date.text]
+        self.article_data.append({'author':author})
+        self.article_data.append({'date':date})
         self.tear_down()
     
     def dayniiile(self):
@@ -75,11 +93,15 @@ class navigate_main_url:
         self.driver.quit()
 
 articles = {}    
-with open(os.path.join(BASE_DIR, 'newsreader/main_feed/articles/dayniiile.txt'), 'w+') as file:
+with open(os.path.join(BASE_DIR, 'newsreader/main_feed/articles/hiiraan.csv'), 'w+') as file:
     for link in links:
         # print(navigate_main_url(link).article_data)
         articles[link] = navigate_main_url(link).article_data
-        file.write(f'{link}: {articles[link]}\n')
+        columns = ['author', 'date', 'p', 'a', 'div']
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        for data in articles[link]:
+            writer.writerow(data)
 file.close()
 
 print('*'*100)
