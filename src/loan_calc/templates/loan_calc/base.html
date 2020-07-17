@@ -7,13 +7,14 @@
     <title>Abdinasir Noor | Project | Loan Calc</title>
 </head>
 <body>
-    <p>Please enter the principle loan amount: <input type="number" name="principle" id="" step="0"></p>
+    <p>Please enter the principle loan amount: <input type="number" name="principle" id=""></p>
     <p>Please enter the loan APR (Annual Percentage Rate): <input type="number" name="apr" id=""> %</p>
     <p>Please enter the loan term length (in years): <input type="number" name="term" id=""></p>
     <div id="results" style="display:none;">
-        Your monthly payments are $<span id="payments"></span>, with <span id="interestPercent"></span>% or $<span id="interestPayment"></span> of the monthly payment will be in interest over the span of 
+        Your monthly payments are $<span id="payments"></span>, with <span id="interestPercent"></span>% or $<span id="interestPayment"></span> of the monthly payment in interest over the span of 
         <span id="length"></span> years.  
     </div>
+    <canvas id="chart" style="display: none;"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="{% static 'loan_calc/js/index.js' %}"></script>    
 </body>
