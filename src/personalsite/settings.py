@@ -44,7 +44,8 @@ ALLOWED_HOSTS =  ['abdinasirnoor.com', '45.79.169.247', '2600:3c03::f03c:91ff:fe
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
+    'personalsite.apps.MyAdminConfig', # replacing default admin config with my own to augment ordering
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

@@ -212,11 +212,22 @@ function chartData(paymentSchedule){
     },
     options: {
         scales: {
+            xAxes: [{
+                stacked: true
+            }],
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
-                }
+                    beginAtZero: true,
+                    min: 0,
+                },
+                stacked: true
             }]
+            // yAxes: [{
+            //     ticks: {
+            //         beginAtZero: true,
+            //         min: 0,
+            //     }
+            // }]
         }
     }
     });
