@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 links = ['https://www.hiiraan.com/op4/2020/July/179053/moving_forward_while_standing_still.aspx']
 class navigate_main_url:
-    def __init__(self, link):
+    def __init__(self, domain, link):
         option = webdriver.firefox.options.Options()
         option.headless = True
         self.driver = webdriver.Firefox(options = option)
@@ -54,21 +54,8 @@ class navigate_main_url:
         self.article_data.append({'date':date})
         self.tear_down()
     
-    def dayniiile(self):
-        ''' assumption, article links need to be scraped from homepage first '''
-        if self.article_links:
-            for link in self.article_links:
-                self.driver.get(link)
-                self.dayniiile_article_data()
-        else:
-            links = self.driver.find_elements_by_xpath("//div[contains(concat(' ', normalize-space(@class), ' '), ' td-big-grid-post ')]//a")
-            self.article_links = list(set([link.get_attribute('href') for link in links if (link.get_attribute('href') != self.site and self.top_home_site) and (link.get_attribute('href') != 'https://www.dayniiile.com/author/admin/')]))
-            for link in self.article_links:
-                self.driver.get(link)
-                self.dayniiile_article_data(link)
-        self.tear_down()
         
-    def dayniiile_article_data(self, link):
+    def dayniiile(self, link):
         ''' assumption is driver is located on an article within the webpage '''
         try:
             scraped_article = WebDriverWait(self.driver, 75).\
@@ -92,17 +79,10 @@ class navigate_main_url:
         self.driver.close()
         self.driver.quit()
 
-articles = {}    
-with open(os.path.join(BASE_DIR, 'newsreader/main_feed/articles/hiiraan.csv'), 'w+') as file:
-    for link in links:
-        # print(navigate_main_url(link).article_data)
-        articles[link] = navigate_main_url(link).article_data
-        columns = ['author', 'date', 'p', 'a', 'div']
-        writer = csv.DictWriter(file, fieldnames=columns)
-        writer.writeheader()
-        for data in articles[link]:
-            writer.writerow(data)
-file.close()
+# articles = {}    
+# for link in links:
+#     # print(navigate_main_url(link).article_data)
+#     articles[link] = navigate_main_url(link).article_data
 
 print('*'*100)
 
