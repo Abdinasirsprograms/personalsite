@@ -17,7 +17,7 @@ class CustomOrderingSite(AdminSite):
         ordering = {
                 "Sites to pull article links from": 1,
                 "Links to articles": 2,
-                "Article links to pull article data from": 3,
+                "Article Data": 3,
             }
 
         app_dict = self._build_app_dict(request)
@@ -39,7 +39,7 @@ class CustomOrderingSite(AdminSite):
         ordering = {
                 "Sites to pull article links from": 1,
                 "Links to articles": 2,
-                "Article links to pull article data from": 3,
+                "Article Data": 3,
             }
         # Sort the models alphabetically within each app.
         app_dict['models'].sort(key=lambda x: ordering[x['name']] if x['name'] in ordering.keys() else x['name'])

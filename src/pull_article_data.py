@@ -1,29 +1,80 @@
 import os
-import json
+import datetime
 import collections
-import csv
+import django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
+django.setup()
+from django.db import models 
+from newsreader.models import Article_site, Article_links, Article_content
+
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-# path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'main_feed/results_feed.txt')
-# with open(path, 'r') as file:
-#     lines = [file.readline() for line in range(7)] # get the first 7 links
-#     file.close()
-# print(lines)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-links = ['https://www.hiiraan.com/op4/2020/July/179053/moving_forward_while_standing_still.aspx']
-class navigate_main_url:
-    def __init__(self, domain, link):
+
+class Article_data:
+    def __init__(self):
         option = webdriver.firefox.options.Options()
         option.headless = True
         self.driver = webdriver.Firefox(options = option)
-        self.driver.get(link)
         self.driver.implicitly_wait(5)
+        # try:
+        self.site_links = Article_links.objects.filter(scrapped__exact=False).order_by('site')
+        self.pull_article_data()
+        self.tear_down()
+        # except Exception as e:
+        #     print('Article link fetch failed with the following exception:', e)
+        #     self.tear_down()
+    
+    def pull_article_data(self):
+        if self.site_links:
+            for link in self.site_links:
+                current_date = datetime.date.today()
+                if link.date_posted:
+                    time_delta = current_date - link.date_posted
+                    if time_delta.days <= 7:
+                        data = navigate_main_url(link, self.driver).article_data
+                        if type(data) == datetime.datetime:
+                            link.date_posted = data
+                            link.scrapped = True
+                            link.save()
+                        else:
+                            article_input = Article_content()
+                            if link.site.domain == 'hiiraan.com':
+                                article_input.title = link.title
+                                article_input.article_content = data['p']
+                                article_input.author = link.site.domain if not data['author'] else data['author']
+                                article_input.date_posted = link.date_posted if link.date_posted else data['date']
+                                article_input.link_to_content = link
+                                link.scrapped = True
+                                link.author = link.site.domain if not data['author'] else data['author']
+                                link.save()
+                                article_input.save()
+                    else:       
+                        link.scrapped = True
+                        link.save()
+                        continue
+                else:
+                    data = navigate_main_url(link, self.driver).article_data
+                    if type(data) == datetime.datetime:
+                        link.date_posted = data
+                        link.scrapped = True
+                        link.save()
+                    else:
+                        print(data)
+
+    def tear_down(self):
+        self.driver.close()
+        self.driver.quit()
+
+class navigate_main_url:
+    def __init__(self, site_link, driver):
+        self.driver = driver
+        self.driver.get(site_link.article_link)
         self.site = self.driver.current_url
-        self.top_home_site = link
+        self.top_home_site = site_link.article_link
         methods = ['hiiraan', 'dayniiile']
         domain = self.site.split('.')[1]
         self.method_to_call = methods.index(domain)
@@ -42,50 +93,104 @@ class navigate_main_url:
         get_date_js = '''
             var text = '';
             var childNodes = arguments[0].childNodes; // child nodes includes Element and Text Node
-            text = childNodes[2].textContent
-            return text;
+            try{
+                text = childNodes[2].textContent;
+            }
+            catch(e){
+                text = undefined;
+            }
+            finally{
+                if(text !== undefined){
+                    return text;
+                } else {
+                    return ' '
+                };
+            };
         '''
-        content = self.driver.find_elements_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[not(child::img)]')
-        author_and_date = self.driver.find_element_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[1]')
-        author = self.driver.execute_script(get_author_js, author_and_date)
-        date = self.driver.execute_script(get_date_js, author_and_date)
-        self.article_data = [{x.tag_name:x.text} for x in content if x.text and x.text != author_and_date.text]
-        self.article_data.append({'author':author})
-        self.article_data.append({'date':date})
-        self.tear_down()
+        try:
+            content = self.driver.find_elements_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[not(child::img)]')
+            content_somali = ''
+            if not content:
+                raise Exception('Navigating somali site')
+        except Exception as e:
+            content = ''
+            content_somali = self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div[2]/div[4][not(contains(concat(\' \',normalize-space(@class),\' \'),\' inline-ad \'))]')
+        try:
+            if content:
+                author_and_date = self.driver.find_element_by_xpath('//*[@id="desktopcontrol1_newsdesktop3_lblcontent"]//p[1]')
+                author_and_date_text = author_and_date.text
+                author = self.driver.execute_script(get_author_js, author_and_date)
+                date = self.driver.execute_script(get_date_js, author_and_date)
+            else:
+                raise Exception('Somali site doesn\'t have authors')
+        except Exception as e:
+            author_and_date_text = ''
+            try:
+                author = self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div[2]/div[contains(@align,\'justify\')][last()]').text
+                author = author[0: author.index(',')- 1] + '' 
+                author = 'by ' + author
+                if len(author) > 100:
+                    author = ''
+            except:
+                author = ''
+            date = ''
+            print(f'error processing location for {self.top_home_site}: {e}')
+        self.article_data = {'p':''}
+        if content_somali:
+            self.article_data['p'] += '' + content_somali.text
+        elif content:
+            for item in content:
+                if item.text and item.text != author_and_date_text:
+                    if item.tag_name == 'p':
+                        self.article_data['p'] += '' + item.text
+        self.article_data['author'] = author
+        self.article_data['date'] = date
     
         
-    def dayniiile(self, link):
+    def dayniiile(self):
         ''' assumption is driver is located on an article within the webpage '''
         try:
             scraped_article = WebDriverWait(self.driver, 75).\
                         until(EC.presence_of_element_located((By.XPATH, '//article'))) 
         except TimeoutException:
-            print(f'{link} has failed')
+            print(f'{self.top_home_site} has failed')
             return
         article_data = {}
         article_data['title'] = scraped_article.find_element_by_xpath('//*[contains(@class,\'td-post-title\')]//h1').text
-        article_data['author'] = scraped_article.find_element_by_xpath('//div[contains(@class,\'td-post-author-name\')]//a').text
-        article_data['date'] = scraped_article.find_element_by_xpath('//time').text
+        author = scraped_article.find_element_by_xpath('//div[contains(@class,\'td-post-author-name\')]//a').text
+        if author == 'admin':
+            article_data['author'] = self.top_home_site
+        else:
+            article_data['author'] = author
+        posted_date = scraped_article.find_element_by_xpath('//time').text
+        try:
+            time_posted = datetime.datetime.strptime(posted_date, '%B %d, %Y') 
+        except:
+            time_posted = posted_date
+            print(posted_date)
+        article_data['date'] = time_posted
         article_body = scraped_article.find_elements_by_xpath('//div[contains(@class,\'td-post-content\')]/p[not(contains(concat(\' \',normalize-space(@class),\' \'),\' td-g-rec-id-content_inline \'))]')
         article_data['content'] = [[x.tag_name, x.text] for x in article_body]
-        article_data['link'] = link
+        article_data['link'] = self.top_home_site
         if self.article_data:
-            self.article_data.append([article_data])
-        else: 
-            self.article_data = [article_data]
+            current_time = datetime.datetime.now()
+            time_delta = current_time - time_posted
+            if time_delta.days < 7:
+                self.article_data.append([article_data])
+            else:
+                return time_posted
+        else:             
+            current_time = datetime.datetime.now()
+            time_delta = current_time - time_posted
+            if time_delta.days < 7:
+                self.article_data.append([article_data])
+            else:
+                self.article_data = time_posted
 
-    def tear_down(self):
-        self.driver.close()
-        self.driver.quit()
 
-# articles = {}    
-# for link in links:
-#     # print(navigate_main_url(link).article_data)
-#     articles[link] = navigate_main_url(link).article_data
+if __name__ == "__main__":        
+    print('*'*100)
 
-print('*'*100)
+    Article_data()
 
-print('file has been written to')
-
-print('*'*100)
+    print('*'*100)

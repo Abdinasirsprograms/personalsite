@@ -645,3 +645,738 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 1595202737630	Marionette	INFO	Stopped listening on port 57389
+1595214218005	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileCzbOVt"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214222309	Marionette	INFO	Listening on port 50016
+1595214222802	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214226413	Marionette	INFO	Stopped listening on port 50016
+1595214309762	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileLwGqlH"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214312385	Marionette	INFO	Listening on port 50093
+1595214312443	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214315710	Marionette	INFO	Stopped listening on port 50093
+1595214357363	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileYH20SS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214359392	Marionette	INFO	Listening on port 50161
+1595214359402	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214362429	Marionette	INFO	Stopped listening on port 50161
+1595214425686	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilegT4yiX"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214428437	Marionette	INFO	Listening on port 50239
+1595214428853	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214431633	Marionette	INFO	Stopped listening on port 50239
+1595214473693	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileKsVHBu"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214476028	Marionette	INFO	Listening on port 50301
+1595214476341	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214491631	Marionette	INFO	Stopped listening on port 50301
+1595214553878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileaovZ4g"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214556089	Marionette	INFO	Listening on port 51794
+1595214556536	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://devtools/client/jsonview/converter-observer.js, line 76: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+1595214571943	Marionette	INFO	Stopped listening on port 51794
+1595214830669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilefDQ5A8"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214832524	Marionette	INFO	Listening on port 51978
+1595214833152	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595214848643	Marionette	INFO	Stopped listening on port 51978
+1595215117956	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile4SdVJQ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595215120153	Marionette	INFO	Listening on port 52170
+1595215120616	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595215135833	Marionette	INFO	Stopped listening on port 52170
+1595268219419	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofiledFJTjT"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268224132	Marionette	INFO	Listening on port 53912
+1595268224258	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268224326	Marionette	INFO	Stopped listening on port 53912
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1595268247227	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileI1snmT"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268249967	Marionette	INFO	Listening on port 53968
+1595268250394	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268250422	Marionette	INFO	Stopped listening on port 53968
+1595268337284	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilej6r4XK"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268339476	Marionette	INFO	Listening on port 54034
+1595268339933	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268339965	Marionette	INFO	Stopped listening on port 54034
+1595268392807	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileqhvk62"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268394853	Marionette	INFO	Listening on port 54105
+1595268394951	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268395020	Marionette	INFO	Stopped listening on port 54105
+1595268441665	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileffTnWS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268443934	Marionette	INFO	Listening on port 54162
+1595268444347	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1595268463364	Marionette	INFO	Stopped listening on port 54162
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+1595268566107	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilezMUVfo"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268568517	Marionette	INFO	Listening on port 54536
+1595268568745	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268587255	Marionette	INFO	Stopped listening on port 54536
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+1595268661531	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileReW9hy"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595268664007	Marionette	INFO	Listening on port 63610
+1595268664175	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595268683056	Marionette	INFO	Stopped listening on port 63610
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+1595280534421	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilePfOR3g"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595280536589	Marionette	INFO	Listening on port 50753
+1595280536599	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595280536666	Marionette	INFO	Stopped listening on port 50753
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Failed to fetch region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1595280615443	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileNJHkoC"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595280617908	Marionette	INFO	Listening on port 50811
+1595280618109	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595280618166	Marionette	INFO	Stopped listening on port 50811
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to remove
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to remove
+1595280921164	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilexYBvGw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595280923219	Marionette	INFO	Listening on port 50929
+1595280923310	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.flashtalking.com/frameworks/js/api/2/10/html5API.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn.bidfilter.com/safeframe.js line 1 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1595280943078	Marionette	INFO	Stopped listening on port 50929
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+1595280999777	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileAcDQHm"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281002293	Marionette	INFO	Listening on port 52448
+1595281002454	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281010101	Marionette	INFO	Stopped listening on port 52448
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1595281161254	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileLr0YzC"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281163127	Marionette	INFO	Listening on port 52677
+1595281163570	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281182655	Marionette	INFO	Stopped listening on port 52677
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_exp_fy2019.js?www.dayniiile.com, line 39: uncaught exception: undefined
+1595281227079	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileDoep0h"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281229308	Marionette	INFO	Listening on port 53020
+1595281229721	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281249631	Marionette	INFO	Stopped listening on port 53020
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x39012D,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+[Child 148, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x39012D,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1595281274540	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilepebUY0"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281276732	Marionette	INFO	Listening on port 53370
+1595281277185	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281284826	Marionette	INFO	Stopped listening on port 53370
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_exp_fy2019.js?www.dayniiile.com, line 39: uncaught exception: undefined
+1595281345910	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile8TONjD"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281348363	Marionette	INFO	Listening on port 53584
+1595281348565	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+JavaScript error: https://eus.rubiconproject.com/usync.html?p=33across&endpoint=us-east&us_privacy=, line 12: SecurityError: The operation is insecure.
+1595281371381	Marionette	INFO	Stopped listening on port 53584
+JavaScript error: https://tag.vlitag.com/v3/1595245132/?q=acea3fca88ac389abd7aedfff50125b4&n=, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://pagead2.googlesyndication.com/pagead/js/r20200715/r20190131/show_ads_impl_fy2019.js, line 39: uncaught exception: undefined
+1595281491211	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileOId2qQ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281493482	Marionette	INFO	Listening on port 53965
+1595281493852	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281493895	Marionette	INFO	Stopped listening on port 53965
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+1595281552761	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilec8LTnR"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281554985	Marionette	INFO	Listening on port 54028
+1595281555410	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595281555457	Marionette	INFO	Stopped listening on port 54028
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+1595281917395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileALGr86"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595281920025	Marionette	INFO	Listening on port 54123
+1595281920074	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.gstatic.com/mysidia/2cef7b9fc9e7376c4fbe3644b9951ecd.js?tag=video_mra/web_fig_och, line 176: SecurityError: The operation is insecure.
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+1595282032539	Marionette	INFO	Stopped listening on port 54123
+JavaScript error: resource://gre/actors/AutoplayParent.jsm, line 13: TypeError: can't access property "ownerDocument", browser is null
+1595282120640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile3eqmw5"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595282123164	Marionette	INFO	Listening on port 54890
+1595282123302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15268, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595282601392	Marionette	INFO	Stopped listening on port 54890
+1595283321977	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileLgCT0r"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595283324314	Marionette	INFO	Listening on port 63807
+1595283324624	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15864, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595283359103	Marionette	INFO	Stopped listening on port 63807
+1595283459954	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile4mv9K8"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595283462079	Marionette	INFO	Listening on port 58150
+1595283462109	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15216, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595283781013	Marionette	INFO	Stopped listening on port 58150
+1595284533113	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilet23PEK"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595284536344	Marionette	INFO	Listening on port 58712
+1595284536786	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15516, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285078320	Marionette	INFO	Stopped listening on port 58712
+	Marionette	INFO	Listening on port 59044
+1595284573958	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 2940, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285077511	Marionette	INFO	Stopped listening on port 59044
+2	Marionette	INFO	Listening on port 59463
+1595284734299	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 16556, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595285081174	Marionette	INFO	Stopped listening on port 59463
+1595285094603	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileLHcWuE"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285096847	Marionette	INFO	Listening on port 60274
+1595285097282	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 16800, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285125633	Marionette	INFO	Stopped listening on port 60274
+1595285131887	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile6K7oGS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285134482	Marionette	INFO	Listening on port 60559
+1595285134531	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 6384, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285199103	Marionette	INFO	Stopped listening on port 60559
+dless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285177858	Marionette	INFO	Listening on port 60883
+1595285177943	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 14528, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285193768	Marionette	INFO	Stopped listening on port 60883
+1595285338525	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilexe0qwQ"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285340712	Marionette	INFO	Listening on port 61233
+1595285341179	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 3800, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595285417432	Marionette	INFO	Stopped listening on port 61233
+1595285501229	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile7s9uNi"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285503474	Marionette	INFO	Listening on port 61781
+1595285503893	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 4076, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595285562772	Marionette	INFO	Stopped listening on port 61781
+1595285611647	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileu8U4eF"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285614119	Marionette	INFO	Listening on port 62223
+1595285614291	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 13696, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595285685053	Marionette	INFO	Stopped listening on port 62223
+1595285698801	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile6lKKIu"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595285700912	Marionette	INFO	Listening on port 62647
+1595285700951	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 16148, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595287789240	Marionette	INFO	Stopped listening on port 62647
+less mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595286849388	Marionette	INFO	Listening on port 63631
+1595286849414	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+1595289206481	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileyIGXRL"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595289209228	Marionette	INFO	Listening on port 49185
+1595289209634	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 17068, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595289745876	Marionette	INFO	Stopped listening on port 49185
+	Marionette	INFO	Listening on port 49632
+1595289658350	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200715/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 10916, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595289743824	Marionette	INFO	Stopped listening on port 49632
+1595289752300	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilekrglr5"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595289753983	Marionette	INFO	Listening on port 50200
+1595289754572	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: uncaught exception: 7
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.gstatic.com/mysidia/2cef7b9fc9e7376c4fbe3644b9951ecd.js?tag=video_mra/web_fig_och, line 176: SecurityError: The operation is insecure.
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1595290517424	Marionette	INFO	Stopped listening on port 50200
+oreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofiles5C1Kz"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595290262315	Marionette	INFO	Listening on port 51724
+1595290262352	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 7972, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595290516102	Marionette	INFO	Stopped listening on port 51724
+1595290522934	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileslWmHi"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595290525550	Marionette	INFO	Listening on port 52197
+1595290525596	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15792, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595290671125	Marionette	INFO	Stopped listening on port 52197
+1595291415609	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilePeGNsw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595291418083	Marionette	INFO	Listening on port 53182
+1595291418283	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 114: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 114: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 114: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 114: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+1595291649339	Marionette	INFO	Stopped listening on port 53182
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1595292217622	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileexGkW2"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292219939	Marionette	INFO	Listening on port 54956
+1595292220276	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595292233941	Marionette	INFO	Stopped listening on port 54956
+1595292313456	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilebPjShB"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292315773	Marionette	INFO	Listening on port 55254
+1595292316090	Marionette	WARN	TLS certificate errors will be ignored for this session
+1595292327639	Marionette	INFO	Stopped listening on port 55254
+1595292359004	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofilehEcri2"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292361172	Marionette	INFO	Listening on port 55545
+1595292361665	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 12832, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595292493549	Marionette	INFO	Stopped listening on port 55545
+less mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292438500	Marionette	INFO	Listening on port 55940
+1595292438731	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 13000, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595292490727	Marionette	INFO	Stopped listening on port 55940
+1595292500506	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileFpVXuS"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292502819	Marionette	INFO	Listening on port 56322
+1595292503178	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.48/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 864, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595292633623	Marionette	INFO	Stopped listening on port 56322
+1595292673138	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile18T2AY"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292675602	Marionette	INFO	Listening on port 57168
+1595292675807	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 1324, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595292846678	Marionette	INFO	Stopped listening on port 57168
+1595292887612	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileuXiEn2"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595292889814	Marionette	INFO	Listening on port 58168
+1595292890302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 1600, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595293125368	Marionette	INFO	Stopped listening on port 58168
+1595293136604	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileNUPjIs"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595293138909	Marionette	INFO	Listening on port 58889
+1595293139280	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 4964, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595293225864	Marionette	INFO	Stopped listening on port 58889
+1595293244476	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileGOtmTb"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595293246923	Marionette	INFO	Listening on port 59290
+1595293247184	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 8180, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595293613165	Marionette	INFO	Stopped listening on port 59290
+e://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 4588, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595293611911	Marionette	INFO	Stopped listening on port 59799
+g on port 60380
+1595293394202	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileYV1FNx"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595293440097	Marionette	INFO	Listening on port 60811
+1595293440534	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 14556, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595293608973	Marionette	INFO	Stopped lExiting due to channel error.
+1595293809805	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofiley0OLSA"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595293812311	Marionette	INFO	Listening on port 62079
+1595293812447	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 16164, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595294781718	Marionette	INFO	Stopped listening on port 62079
+rtificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15608, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595294780238	Marionette	INFO	Stopped listening on port 62724
+ on port 63839
+1595294710308	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15332, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+Exiting due to channel error.
+1595294787916	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileTn2TBq"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595294790447	Marionette	INFO	Listening on port 64234
+1595294790571	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 1724, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595294829016	Marionette	INFO	Stopped listening on port 64234
+1595294867406	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile5QV6Sp"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595294869877	Marionette	INFO	Listening on port 64586
+1595294870139	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 6316, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595294905573	Marionette	INFO	Stopped listening on port 64586
+1595294920984	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofile8lpbo9"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595294923325	Marionette	INFO	Listening on port 64944
+1595294923642	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 17084, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595294960253	Marionette	INFO	Stopped listening on port 64944
+1595294967412	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileMLg0Uu"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595294969238	Marionette	INFO	Listening on port 65292
+1595294969892	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 8764, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595297088992	Marionette	INFO	Stopped listening on port 65292
+g on port 50404
+1595296674071	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 14364, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: can't access property "remove", this.browser.driver.dialogObserver is null
+1595297084985	Marionette	INFO	Stopped listening on port 50404
+ on port 51151
+1595297042584	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+1595297094983	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofiley1V2ET"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595297097779	Marionette	INFO	Listening on port 51513
+1595297098148	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 16140, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595298497552	Marionette	INFO	Stopped listening on port 51513
+/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595297307376	Marionette	INFO	Listening on port 52269
+1595297307441	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 4240, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595298493457	Marionette	INFO	Stopped listening on port 52269
+8541	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39012F,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 13212, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595298495542	Marionette	INFO	Stopped listening on port 52706
+	Marionette	INFO	Listening on port 54015
+1595298419938	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 17372, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595298500081	Marionette	INFO	Stopped listening on port 54015
+1595298507929	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileOzJ9ip"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595298510091	Marionette	INFO	Listening on port 54445
+1595298510585	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 14140, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1595298561305	Marionette	INFO	Stopped listening on port 54445
+1595298570676	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofiletzrMTb"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595298572830	Marionette	INFO	Listening on port 54803
+1595298573310	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1595299524546	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\ABDINA~1\\AppData\\Local\\Temp\\rust_mozprofileh84dFh"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595299527678	Marionette	INFO	Listening on port 56247
+1595299527758	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://tpc.googlesyndication.com/pagead/js/r20200716/r20110914/client/qs_click_protection_fy2019.js, line 11: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 114: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1595300103515	Marionette	INFO	Stopped listening on port 56247

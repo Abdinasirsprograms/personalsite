@@ -15,13 +15,15 @@ class Site_data:
         option = webdriver.firefox.options.Options()
         option.headless = True
         self.driver = webdriver.Firefox(options = option)
-        self.html_sites = Article_site.objects.filter(website_type__exact='HTML')
-        self.xml_sites = Article_site.objects.filter(website_type__exact='XML')
+        self.driver.implicitly_wait(5)
         try:
+            self.html_sites = Article_site.objects.filter(website_type__exact='HTML')
+            self.xml_sites = Article_site.objects.filter(website_type__exact='XML')
             self.get_xml_site_links()
             self.get_html_site_links()
             self.tear_down()
-        except:
+        except Exception as e:
+            print('Article site fetch failed with the following exception:', e)
             self.tear_down()
 
     def get_xml_site_links(self):
@@ -33,9 +35,9 @@ class Site_data:
                 'title', 'link', 'description' and  'pubdate'
                 '''
                 if results:
-                    print('^'*25, f'XML Articles foundfor {site.name}', '^'*25)
+                    print('^'*25, f'XML Articles foundfor {site.domain}', '^'*25)
                     for i in range(len(results)):
-                        article_exists = Article_links.objects.filter(article_link=results[i]['link'])
+                        article_exists = Article_links.objects.filter(site=site).filter(article_link=results[i]['link'])
                         if article_exists:
                             print('x'*25, 'Object already in DB', 'x'*25)
                             continue
@@ -68,14 +70,15 @@ class Site_data:
                 link and title 
                 '''
                 if results:
-                    print('^'*25, f'HTML Articles foundfor {site.name}', '^'*25)
+                    print('^'*25, f'HTML Articles found for {site.domain}', '^'*25)
                     for i in range(len(results)):
-                        article_exists = Article_links.objects.filter(article_link=results[i]['link'])
+                        article_exists = Article_links.objects.filter(site=site).filter(article_link=results[i]['link'])
                         if article_exists:
-                                continue
+                            print('x'*25, 'Object already in DB', 'x'*25)
+                            continue
                         article_input = Article_links()
                         print('*'*25, 'Inputing object to DB', '*'*25)
-                        article_input.title =results[i]['title']
+                        article_input.title = results[i]['title']
                         article_input.article_link = results[i]['link'] 
                         article_input.site = site
                         try:

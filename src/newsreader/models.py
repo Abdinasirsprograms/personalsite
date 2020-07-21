@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 class Article_site(models.Model):
     link_to_site = models.URLField()
     domain = models.CharField(max_length=80)
@@ -31,7 +32,7 @@ class Article_links(models.Model):
     description = models.TextField(blank=True)
     author = models.CharField(max_length=100, blank=True)
     title = models.CharField(max_length=255, blank=True)
-
+    scrapped = models.BooleanField(default=False)
     class Meta:
             verbose_name = 'A Link to an article'
             verbose_name_plural = 'Links to articles'
@@ -39,15 +40,25 @@ class Article_links(models.Model):
     def __str__(self):
         return f"{self.title} * from {self.site}"
 class Article_content(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=255)
     date_posted = models.DateField(null=True, blank=True)
     author = models.CharField(max_length=100, blank=True)
     article_content = models.TextField()
     link_to_content = models.OneToOneField(Article_links, on_delete=models.CASCADE, verbose_name="article's link", unique=True)
     
     class Meta:
-            verbose_name = 'Article links to pull article data from'
-            verbose_name_plural = 'Article links to pull article data from'
+            verbose_name = 'Article Data'
+            verbose_name_plural = 'Article Data'
 
     def __str__(self):
         return f"{self.title} * from {self.link_to_content.site}"
+
+@receiver(pre_save, sender=Article_content)
+def delete_articles_after_insert(sender, instance, **kwargs):
+    site_id = instance.link_to_content.site.id
+    site_articles = Article_links.objects.filter(scrapped__exact=False).filter(article_content__article_content__isnull=False).filter(site__id=site_id)
+    article_count = site_articles.count()
+    if article_count >= 10:
+      site_articles_by_date = site_articles.order_by('-date_posted')
+      site_articles_by_date[article_count - 1].article_content.delete()
+    
