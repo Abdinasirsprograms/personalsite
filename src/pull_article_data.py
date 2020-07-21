@@ -2,6 +2,7 @@ import os
 import datetime
 import collections
 import django
+import time
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
 django.setup()
 from django.db import models 
@@ -16,25 +17,30 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Article_data:
     def __init__(self):
-        option = webdriver.firefox.options.Options()
-        option.headless = True
-        self.driver = webdriver.Firefox(options = option)
-        self.driver.implicitly_wait(5)
         # try:
         self.site_links = Article_links.objects.filter(scrapped__exact=False).order_by('site')
+        self.start_up()
         self.pull_article_data()
         self.tear_down()
         # except Exception as e:
         #     print('Article link fetch failed with the following exception:', e)
         #     self.tear_down()
     
+    def start_up(self):
+        option = webdriver.firefox.options.Options()
+        option.headless = True
+        self.driver = webdriver.Firefox(options = option)
+        self.driver.implicitly_wait(5)
+
     def pull_article_data(self):
         if self.site_links:
+            counter = 0
             for link in self.site_links:
                 current_date = datetime.date.today()
                 if link.date_posted:
                     time_delta = current_date - link.date_posted
                     if time_delta.days <= 7:
+                        counter += 1
                         data = navigate_main_url(link, self.driver).article_data
                         if type(data) == datetime.datetime:
                             link.date_posted = data
@@ -57,6 +63,7 @@ class Article_data:
                         link.save()
                         continue
                 else:
+                    counter += 1
                     data = navigate_main_url(link, self.driver).article_data
                     if type(data) == datetime.datetime:
                         link.date_posted = data
@@ -64,6 +71,10 @@ class Article_data:
                         link.save()
                     else:
                         print(data)
+                if counter % 10 == 0:
+                    self.tear_down()
+                    time.sleep(5)
+                    self.start_up()
 
     def tear_down(self):
         self.driver.close()
@@ -72,6 +83,7 @@ class Article_data:
 class navigate_main_url:
     def __init__(self, site_link, driver):
         self.driver = driver
+        time.sleep(2)
         self.driver.get(site_link.article_link)
         self.site = self.driver.current_url
         self.top_home_site = site_link.article_link

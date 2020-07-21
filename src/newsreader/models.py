@@ -45,7 +45,20 @@ class Article_content(models.Model):
     author = models.CharField(max_length=100, blank=True)
     article_content = models.TextField()
     link_to_content = models.OneToOneField(Article_links, on_delete=models.CASCADE, verbose_name="article's link", unique=True)
-    
+    def save(self, *args, **kwargs):
+        site_id = self.link_to_content.site.id
+        site_articles = Article_links.objects.filter(article_content__article_content__isnull=False).filter(site__id=site_id)
+        article_count = site_articles.count()
+        if article_count >= 10:
+            site_articles_by_date = site_articles.order_by('-date_posted')
+            oldest_article = site_articles_by_date[article_count - 1].date_posted
+            date_diff = oldest_article - self.date_posted
+            if (date_diff.days <= -1):
+                site_articles_by_date[article_count - 1].article_content.delete()
+                super().save(*args, **kwargs)
+            else:
+                return
+        super().save(*args, **kwargs) 
     class Meta:
             verbose_name = 'Article Data'
             verbose_name_plural = 'Article Data'
@@ -53,12 +66,3 @@ class Article_content(models.Model):
     def __str__(self):
         return f"{self.title} * from {self.link_to_content.site}"
 
-@receiver(pre_save, sender=Article_content)
-def delete_articles_after_insert(sender, instance, **kwargs):
-    site_id = instance.link_to_content.site.id
-    site_articles = Article_links.objects.filter(scrapped__exact=False).filter(article_content__article_content__isnull=False).filter(site__id=site_id)
-    article_count = site_articles.count()
-    if article_count >= 10:
-      site_articles_by_date = site_articles.order_by('-date_posted')
-      site_articles_by_date[article_count - 1].article_content.delete()
-    

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 from django.utils.html import format_html
 
 from .models import *
@@ -15,6 +16,7 @@ class Display_id_Links(admin.ModelAdmin):
     get_article_content.short_description = 'article content id'
     ordering = ('id',)
     list_editable = ['scrapped']
+
 class Display_id_Articles(admin.ModelAdmin):
     list_display = ['id', 'title', 'date_posted', 'author', 'get_actual_link', 'get_language']
     list_editable = ['author']
@@ -23,10 +25,18 @@ class Display_id_Articles(admin.ModelAdmin):
         obj.link_to_content.article_link, obj.link_to_content.article_link)
     def get_language(self, obj):
         return obj.link_to_content.site.language
+    def get_empty_article_links(self, obj):
+        empty = Article_links.objects.filter(article_content__link_to_content__isnull=True)
+        for empty_article in empty:
+            return empty.id 
     get_actual_link.short_description = 'Link to article'
     get_language.short_description = 'Language'
     get_language.admin_order_field = 'link_to_content__site__language'
     ordering = ('id',)
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "link_to_content":
+            kwargs["queryset"] = Article_links.objects.filter(article_content__link_to_content__isnull=True)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(Article_site, Display_id_Sites)
 admin.site.register(Article_links, Display_id_Links)
