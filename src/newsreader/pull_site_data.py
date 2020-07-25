@@ -148,7 +148,7 @@ class Walk_through_HTML:
 
 if __name__ == "__main__":    
     print('*'*100)
-
+    print('\t\tExecuting Pull Site Data\n')
     Site_data()
 
     print('*'*100)

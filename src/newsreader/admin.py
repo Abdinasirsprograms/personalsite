@@ -18,18 +18,21 @@ class Display_id_Links(admin.ModelAdmin):
     list_editable = ['scrapped']
 
 class Display_id_Articles(admin.ModelAdmin):
-    list_display = ['id', 'title', 'date_posted', 'author', 'get_actual_link', 'get_language']
+    list_display = ['id', 'get_articles_site', 'title', 'date_posted', 'author', 'get_actual_link', 'get_language']
     list_editable = ['author']
     def get_actual_link(self, obj):
         return format_html('<a href="{}" target="_blank">Link to Article</a>', 
         obj.link_to_content.article_link, obj.link_to_content.article_link)
     def get_language(self, obj):
         return obj.link_to_content.site.language
+    def get_articles_site(self, obj):
+        return obj.link_to_content.site
     def get_empty_article_links(self, obj):
         empty = Article_links.objects.filter(article_content__link_to_content__isnull=True)
         for empty_article in empty:
             return empty.id 
     get_actual_link.short_description = 'Link to article'
+    get_articles_site.short_description = 'Article\'s main site'
     get_language.short_description = 'Language'
     get_language.admin_order_field = 'link_to_content__site__language'
     ordering = ('id',)

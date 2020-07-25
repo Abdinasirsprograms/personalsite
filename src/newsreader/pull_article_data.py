@@ -58,6 +58,16 @@ class Article_data:
                                 link.author = link.site.domain if not data['author'] else data['author']
                                 link.save()
                                 article_input.save()
+                            if link.site.domain == 'dayniiile.com':
+                                article_input.title = link.title
+                                article_input.article_content = data['content']
+                                article_input.author = link.site.domain if not data['author'] else data['author']
+                                article_input.date_posted = link.date_posted if link.date_posted else data['date']
+                                article_input.link_to_content = link
+                                link.author = link.site.domain if not data['author'] else data['author']
+                                link.scrapped = True
+                                link.save()
+                                article_input.save()
                     else:       
                         link.scrapped = True
                         link.save()
@@ -67,6 +77,7 @@ class Article_data:
                     data = navigate_main_url(link, self.driver).article_data
                     if type(data) == datetime.datetime:
                         link.date_posted = data
+                        link.author = link.author if link.author else link.site.domain
                         link.scrapped = True
                         link.save()
                     else:
@@ -149,7 +160,7 @@ class navigate_main_url:
             print(f'error processing location for {self.top_home_site}: {e}')
         self.article_data = {'p':''}
         if content_somali:
-            self.article_data['p'] += '' + content_somali.text
+            self.article_data['p'] += ' ' + content_somali.text if self.article_data['p'] else '' + content_somali.text # add space after elements
         elif content:
             for item in content:
                 if item.text and item.text != author_and_date_text:
@@ -173,7 +184,7 @@ class navigate_main_url:
         if author == 'admin':
             article_data['author'] = self.top_home_site
         else:
-            article_data['author'] = author
+            article_data['author'] = 'by ' + author
         posted_date = scraped_article.find_element_by_xpath('//time').text
         try:
             time_posted = datetime.datetime.strptime(posted_date, '%B %d, %Y') 
@@ -182,27 +193,24 @@ class navigate_main_url:
             print(posted_date)
         article_data['date'] = time_posted
         article_body = scraped_article.find_elements_by_xpath('//div[contains(@class,\'td-post-content\')]/p[not(contains(concat(\' \',normalize-space(@class),\' \'),\' td-g-rec-id-content_inline \'))]')
-        article_data['content'] = [[x.tag_name, x.text] for x in article_body]
+        article_data['content'] = ''
+        for content in article_body:
+            article_data['content'] += ' ' + content.text if article_data['content'] else '' + content.text
         article_data['link'] = self.top_home_site
-        if self.article_data:
+        if article_data['content']:
             current_time = datetime.datetime.now()
             time_delta = current_time - time_posted
             if time_delta.days < 7:
-                self.article_data.append([article_data])
+                self.article_data = article_data
             else:
-                return time_posted
+                self.artticle_data = time_posted
         else:             
-            current_time = datetime.datetime.now()
-            time_delta = current_time - time_posted
-            if time_delta.days < 7:
-                self.article_data.append([article_data])
-            else:
-                self.article_data = time_posted
+            self.article_data = time_posted
 
 
 if __name__ == "__main__":        
     print('*'*100)
-
+    print('\t\tExecuting Pull Article Data\n')
     Article_data()
 
     print('*'*100)

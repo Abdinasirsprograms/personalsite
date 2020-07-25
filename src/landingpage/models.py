@@ -72,7 +72,7 @@ class product(models.Model):
         stock = models.PositiveIntegerField()
         created_at = models.DateTimeField(auto_now_add=True)
         updated_at = models.DateTimeField(auto_now=True)
-        def image_folder_path(instance, self):
+        def image_folder_path(self, instance):
             return os.path.join(instance.product_name, instance.product_name + ".jpeg")
         image = models.ImageField(upload_to=image_folder_path, blank=True)
 
@@ -84,7 +84,7 @@ class product(models.Model):
             return self.product_name
 class Product_images(models.Model):
         product_foreign = models.ForeignKey(product, related_name='Product_images', on_delete=models.CASCADE)
-        def image_path(instance, self):
+        def image_path(self, instance):
             # query = product.objects.filter('product_name').objects.all()
             return os.path.join(str(product.objects.get(id=(instance.product_foreign_id))).replace('product',''),
             instance.image_name + ".jpeg")
