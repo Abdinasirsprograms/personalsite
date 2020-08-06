@@ -17,14 +17,14 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Article_data:
     def __init__(self):
-        # try:
-        self.site_links = Article_links.objects.filter(scrapped__exact=False).order_by('site')
-        self.start_up()
-        self.pull_article_data()
-        self.tear_down()
-        # except Exception as e:
-        #     print('Article link fetch failed with the following exception:', e)
-        #     self.tear_down()
+        try:
+            self.site_links = Article_links.objects.filter(scrapped__exact=False).order_by('site')
+            self.start_up()
+            self.pull_article_data()
+            self.tear_down()
+        except Exception as e:
+            print('Article link fetch failed with the following exception:', e)
+            self.tear_down()
     
     def start_up(self):
         option = webdriver.firefox.options.Options()

@@ -13,7 +13,7 @@ from landingpage.models import Inbox
 from datetime import datetime
 
 class Command(BaseCommand):
-    help = 'Pull site datas'
+    help = 'Pull news site data'
 
     def handle(self, *args, **options):
         print('*'*100)
