@@ -144,8 +144,8 @@ USE_TZ = True
 MEDIA_ROOT = os.path.join(BASE_DIR,'media_product')
 MEDIA_URL = '/media_product/'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static\landingpage')] # only for local testing
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # only for local testing
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'

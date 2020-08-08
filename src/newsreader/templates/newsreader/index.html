@@ -1,0 +1,21 @@
+{% extends "landingpage/base.html"%}
+{% load static %}
+{% block title %} News Reader | Abdinasir Noor {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'newsreader/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <h1>
+        This is the article feed:
+    </h1>
+    <div id="content">
+
+    </div>
+</main>
+{% block js %}
+<script src="{% static 'newsreader/js/index.js' %}"></script>
+{% endblock %}
+{% endblock %}

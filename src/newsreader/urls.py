@@ -20,4 +20,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', display_html, name="display_html"),
+    path('pull_articles/<str:language>', pull_articles, name="pull_articles"),
 ] 
