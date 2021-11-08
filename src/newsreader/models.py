@@ -49,7 +49,7 @@ class Article_content(models.Model):
         site_id = self.link_to_content.site.id
         site_articles = Article_links.objects.filter(article_content__article_content__isnull=False).filter(site__id=site_id)
         article_count = site_articles.count()
-        if article_count >= 10:
+        if article_count >= 20:
             site_articles_by_date = site_articles.order_by('-date_posted')
             oldest_article = site_articles_by_date[article_count - 1].date_posted
             date_diff = oldest_article - self.date_posted

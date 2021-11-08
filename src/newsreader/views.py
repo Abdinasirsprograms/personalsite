@@ -7,19 +7,23 @@ def display_html(request):
         return render(request, 'newsreader/index.html')
 
 def pull_articles(request, language):
-        data = Article_links.objects.filter(site__language=language)
-        context = []
-        data = Paginator(data,50)
-        data = data.page(1).object_list
-        for article in data:
-                temp = {}
-                temp['site'] = article.site.domain
-                temp['external_link'] = article.article_link
-                temp['date_posted'] = article.date_posted
-                temp['description'] = article.description
-                temp['title'] = article.title
-                context.append({'id': article.id, 'content':temp})
-                        
+        # data = Article_links.objects.filter(site__language=language).order_by('-date_posted')[:50]
+        context = {}
+        sites = Article_site.objects.filter(language=language)
+        for site in sites:
+                content = []
+                data = Article_links.objects.filter(site__id=site.id).order_by('-date_posted')[:15]
+                for count, article in enumerate(data):
+                        temp = []
+                        temp = [{       'id' : article.id,
+                                        'site': article.site.domain,
+                                        'external_link': article.article_link,
+                                        'date_posted':article.date_posted,
+                                        'description': article.description,
+                                        'title': article.title
+                        }]
+                        content.append(temp)
+                context[site.domain] = content
         return JsonResponse({'data': context})
 
 def display_article(request):

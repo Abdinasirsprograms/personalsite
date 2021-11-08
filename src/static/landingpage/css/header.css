@@ -107,7 +107,7 @@ header {
 
 #links::before {
     content: "";
-    background: url("/static/imgs/mountain_range.svg") repeat-x;
+    background: url("/static/landingpage/imgs/mountain_range.svg") repeat-x;
     background-size: contain;
     background-position: center;
     position: absolute;

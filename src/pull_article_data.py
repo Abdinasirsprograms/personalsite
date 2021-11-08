@@ -3,6 +3,8 @@ import datetime
 import collections
 import django
 import time
+import traceback
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
 django.setup()
 from django.db import models 
@@ -23,7 +25,10 @@ class Article_data:
             self.pull_article_data()
             self.tear_down()
         except Exception as e:
-            print('Article link fetch failed with the following exception:', e)
+            print(f'Article link id {self.debug_link.id} fetch failed with the following exception:', e)
+            print('X'*25)
+            traceback.print_exc()
+            print('X'*25)
             self.tear_down()
     
     def start_up(self):
@@ -36,6 +41,7 @@ class Article_data:
         if self.site_links:
             counter = 0
             for link in self.site_links:
+                self.debug_link = link
                 current_date = datetime.date.today()
                 if link.date_posted:
                     time_delta = current_date - link.date_posted
@@ -51,11 +57,11 @@ class Article_data:
                             if link.site.domain == 'hiiraan.com':
                                 article_input.title = link.title
                                 article_input.article_content = data['p']
-                                article_input.author = link.site.domain if not data['author'] else data['author']
+                                article_input.author = link.site.domain if not data['author'] else data['author'][:99]
                                 article_input.date_posted = link.date_posted if link.date_posted else data['date']
                                 article_input.link_to_content = link
                                 link.scrapped = True
-                                link.author = link.site.domain if not data['author'] else data['author']
+                                link.author = link.site.domain if not data['author'] else data['author'][:99]
                                 link.save()
                                 article_input.save()
                             if link.site.domain == 'dayniiile.com':
@@ -66,8 +72,8 @@ class Article_data:
                                 article_input.link_to_content = link
                                 link.author = link.site.domain if not data['author'] else data['author']
                                 link.scrapped = True
-                                link.save()
                                 article_input.save()
+                                link.save()
                     else:       
                         link.scrapped = True
                         link.save()
@@ -75,13 +81,31 @@ class Article_data:
                 else:
                     counter += 1
                     data = navigate_main_url(link, self.driver).article_data
-                    if type(data) == datetime.datetime:
+                    if(type(data) == datetime.datetime):
                         link.date_posted = data
                         link.author = link.author if link.author else link.site.domain
                         link.scrapped = True
                         link.save()
+                    elif('date' in data.keys()):
+                        if(type(data['date']) == datetime.datetime):
+                            data['date'] = data['date'].date()
+                            time_delta = current_date - data['date']
+                            if(time_delta.days <= 7 and (link.site.domain == 'dayniiile.com')):
+                                article_input = Article_content()
+                                article_input.title = data['title']
+                                article_input.article_content = data['content']
+                                article_input.author = link.site.domain if not data['author'] else data['author']
+                                article_input.date_posted = link.date_posted if link.date_posted else data['date']
+                                article_input.link_to_content = link
+                                link.author = link.site.domain if not data['author'] else data['author']
+                                link.scrapped = True
+                                link.date_posted = data['date']
+                                article_input.save()
+                                link.save()
                     else:
-                        print(data)
+                        print(f'no valid data returned: {data}')
+                        link.scrapped = True
+                        link.save()
                 if counter % 10 == 0:
                     self.tear_down()
                     time.sleep(5)
@@ -190,7 +214,6 @@ class navigate_main_url:
             time_posted = datetime.datetime.strptime(posted_date, '%B %d, %Y') 
         except:
             time_posted = posted_date
-            print(posted_date)
         article_data['date'] = time_posted
         article_body = scraped_article.find_elements_by_xpath('//div[contains(@class,\'td-post-content\')]/p[not(contains(concat(\' \',normalize-space(@class),\' \'),\' td-g-rec-id-content_inline \'))]')
         article_data['content'] = ''

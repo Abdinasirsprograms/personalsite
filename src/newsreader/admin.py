@@ -7,7 +7,9 @@ class Display_id_Sites(admin.ModelAdmin):
     list_display = ['id', 'link_to_site', 'domain', 'language', 'website_type']
     ordering = ('id',)
     list_editable = ['language']
-class Display_id_Links(admin.ModelAdmin):
+class Display_id_Links(admin.ModelAdmin, admin.SimpleListFilter):
+    search_fields = ('id',)
+    list_filter = ('site', 'site__language', 'scrapped')
     list_display = ['id', 'site', 'date_posted', 'author', 'title', 'scrapped', 'get_article_content']
     def get_article_content(self, obj):
         article_id = Article_content.objects.get(link_to_content__exact=obj.id).id
@@ -39,6 +41,8 @@ class Display_id_Articles(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "link_to_content":
             kwargs["queryset"] = Article_links.objects.filter(article_content__link_to_content__isnull=True)
+            # kwargs["initial"] = 
+        # print(kwargs)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(Article_site, Display_id_Sites)

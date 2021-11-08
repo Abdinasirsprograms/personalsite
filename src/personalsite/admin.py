@@ -8,7 +8,9 @@ from django.contrib.admin import AdminSite
 
 
 class CustomOrderingSite(AdminSite):
-
+    site_header = 'Abdinasir\'s Amazing Website'
+    site_title = "Abdinasir\'s Website Admin Portal"
+    index_title = "Abdinasir\'s Amazing Website Portal"
     def get_app_list(self, request):
         """
         Return a sorted list of all the installed apps that have been
