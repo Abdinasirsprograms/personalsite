@@ -2,7 +2,7 @@ from django.apps import apps
 from django.utils.text import capfirst
 from django.utils.translation import gettext as _, gettext_lazy
 from django.template.response import TemplateResponse
-
+from django.http import Http404
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 
