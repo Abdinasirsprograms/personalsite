@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions.backends.signed_cookies',
     'loan_calc',
     'newsreader',
-    'weather',
 ]
 
 MIDDLEWARE = [
