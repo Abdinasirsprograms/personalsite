@@ -10,7 +10,7 @@ src/personalsite/__init__.py
 src/static/landingpage/imgs/Logo.png
 src/static/landingpage/imgs/logo.png
 .idea/workspace.xml
-
+geckodriver.log
 .idea/
 desktop.ini
 .vscode/settings.json
