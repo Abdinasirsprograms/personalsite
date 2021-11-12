@@ -12,15 +12,8 @@ import urllib
 import urllib.request
 import json
 
-def display_html(request):
-        # query = splash_post.objects.all()
-        # context = { 'splash_posts':query }
+def homepage(request):
         return render(request, 'landingpage/index.html')
-
-def display_blog(request):
-        query = blog_post.objects.all()
-        context = { 'blog_post':query }
-        return render(request, 'landingpage/blog.html', context)
 
 def contacted(request):
         if request.method == 'POST':
@@ -60,9 +53,9 @@ def sitemap(request):
         return HttpResponseRedirect('http://abdinasirnoor.com/static/landingpage/sitemap.xml')
 
 def privacy(request):
-        return render(request,'landingpage/privacy.html')
+        return render(request,'landingpage/base/privacy.html')
 
-def project(request):
+def eccomerce(request):
         query = product.objects.filter(available=True)
         if 'cart_id' not in request.session:
             request.session['cart_id'] = random.randrange(1,1000)
@@ -78,7 +71,7 @@ def project(request):
                 cart_info = cart_info.values('count').get()['count']
             else:
                 cart_info = 0
-        return render(request,'landingpage/projects.html',context={"products":query,"cart":cart_info,"products_added":products_added_already})
+        return render(request,'eccomerce/base.html',context={"products":query,"cart":cart_info,"products_added":products_added_already})
 
 def Push_to_cart(request, pk):
         value = request.session['cart_id']

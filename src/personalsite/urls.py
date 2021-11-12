@@ -21,16 +21,14 @@ from django.conf.urls.static import static
 from django.urls import include
 
 urlpatterns = [
-    path('', display_html, name="display_html"),
+    path('', homepage, name="homepage"),
     path('admin/', admin.site.urls),
     path('projects/loan_calc/', include('loan_calc.urls')),
-    path('projects/weather/', include('weather.urls')),
     path('projects/newsreader/', include('newsreader.urls')),
-    path('blog/', display_blog, name="display_blog"),
     path('contacted/', contacted, name="contacted"),
     path('sitemap', sitemap, name="sitemap"),
     path('privacy', privacy, name="privacy"),
-    path('projects', project, name="project"),
+    path('ecommerce', eccomerce, name="eccomerce"),
     path('product/<slug>', product_view, name="product_view"),
     path('cart/<pk>', Push_to_cart, name="Push_to_cart"),
     path('cart/', Cart_view, name="Cart_view"),
