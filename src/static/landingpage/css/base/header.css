@@ -22,7 +22,7 @@ nav {
     height: 85%;
     width: 85%;
     background: none;
-    border: none;
+    border: solid 1px;
     padding: 0;
 }
 
@@ -32,7 +32,7 @@ nav {
 }
 
 .slide-right {
-    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
 }
 
 
@@ -50,22 +50,25 @@ nav {
             d: path("M0 15, L20 15");
     }
     100% {
-            d: path("M0 15, L20 3");
+            d: path("M1.35982 16, L18.3598 1.23178");
     }
 }
 
-/* @keyframes bottom-bun-slide-up {
+@keyframes top-bun-slide-down {
     0% {
-            d: path("M0 15, L20 15");
+            d: path("M0 1, L20 1");
     }
     100% {
-            d: path("M0 15, L20 3");
+            d: path("M1.42654 1.19, L20 15.1808");
     }
-} */
-
+}
   
 .bottum_bun_slide_up {
-    animation: bottom-bun-slide-up 2s cubic-bezier(1, 0, 1, 0.940) both;
+    animation: bottom-bun-slide-up 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
+}
+
+.top_bun_slide_up {
+    animation: top-bun-slide-down 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
 }
 
 .link_container {
