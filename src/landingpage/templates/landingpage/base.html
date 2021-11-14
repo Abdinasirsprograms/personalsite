@@ -62,10 +62,10 @@ _M_      \M  YMMMMM9   YMMMMM9 _MM_
     <title>{% block title %}{% endblock %}</title>
     <style>
     /* Import fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Chelsea+Market&family=Merriweather+Sans&family=Open+Sans&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Merriweather+Sans&family=Open+Sans&display=swap');
+    
     :root {
-        --header_font: 'Chelsea Market', 'Open Sans';
+        --header_font: 'Open Sans';
         --tagline_font: 'Poppins', serif;
         --default_font: 'Merriweather Sans', sans-serif;
         --hightlight_color: #4E598C;
@@ -103,6 +103,8 @@ _M_      \M  YMMMMM9   YMMMMM9 _MM_
 
 {% block js %}
 {% endblock %}  
+<script src="{% static 'landingpage/js/header.js' %}"></script>       
+
 </body>
 </html>
 

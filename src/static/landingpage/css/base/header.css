@@ -3,26 +3,28 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding: 5%;
+    padding: 6%;
+    z-index: 2;
 
 }
 h1 {
     font-family: var(--header_font);
-    font-weight: 400;
-    font-size:1.30em;
+    font-weight: 600;
+    font-size: 1.43em;
+    letter-spacing: .07em;
 }
 
 nav {
     display: flex;
     height: 5vh;
-    width: 15vw;
+    width: 9vw;
 }
 
 .hamburger_button {
     height: 85%;
     width: 85%;
     background: none;
-    border: solid 1px;
+    border: none;
     padding: 0;
 }
 
@@ -31,50 +33,48 @@ nav {
     height: 100%;
 }
 
-.slide-right {
-    animation: slide-right 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
-}
-
-
-@keyframes slide-right {
-    0% {
-                transform: translateX(0);
+@keyframes top-bun-slide-down {
+    100% {
+            transform: rotate(43deg) translate(0px, -2px);
     }
+}
+ 
+@keyframes slide-right {
     100% {
                 transform: translateX(100px);
     }
 }
   
 @keyframes bottom-bun-slide-up {
-    0% {
-            d: path("M0 15, L20 15");
-    }
     100% {
-            d: path("M1.35982 16, L18.3598 1.23178");
+            /* negative degree to rotate clockwise */
+            transform: rotate(-41deg) translate(-10px, -2px);            
     }
 }
 
-@keyframes top-bun-slide-down {
-    0% {
-            d: path("M0 1, L20 1");
-    }
-    100% {
-            d: path("M1.42654 1.19, L20 15.1808");
-    }
-}
-  
-.bottum_bun_slide_up {
-    animation: bottom-bun-slide-up 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
+
+.top_bun_slide_down {
+    animation: top-bun-slide-down 1.35s cubic-bezier(0.85, -0.02, 0, 1.13) both;
 }
 
-.top_bun_slide_up {
-    animation: top-bun-slide-down 1.5s cubic-bezier(0.85, -0.02, 0, 1.13) both;
+.slide-right {
+    animation: slide-right 1.35s cubic-bezier(0.85, -0.02, 0, 1.13) both;
 }
+
+.bottom_bun_slide_up {
+    animation: bottom-bun-slide-up 1.35s cubic-bezier(0.85, -0.02, 0, 1.13) both;
+}
+
+
 
 .link_container {
     display: none;
     list-style: none;
     align-self: flex-end;
+}
+
+.hidden {
+    display: none;
 }
 
 .link_container {

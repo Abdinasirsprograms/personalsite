@@ -1,46 +1,27 @@
-var menuButton = document.querySelector("#menuContainer");
-var nightContainer = document.querySelector("#nightContainer");
-var sunContainer = document.querySelector("#sunContainer");
-var links = document.querySelector("#links");
-var clickableLinks = document.querySelectorAll('#linkContainer a');
-var goDown = "normalContainerAnimation";
-var comeUp = "reverseContainerAnimation";
+const menuButton = document.querySelector(".hamburger_button")
+const animation_classes = ['top_bun_slide_down', 'slide-right', 
+    'bottom_bun_slide_up']
+const reverse_animation_classes = ['reverse_top_bun_slide_up', 'reverse_slide-right', 
+    'reverse_bottom_bun_slide_up']
+const hamburger_svg = document.querySelector(".hamburger")
 
-menuButton.addEventListener('click', menuClick);
+if (menuButton){
+    menuButton.addEventListener('click', openHamburger)
+}
 
-clickableLinks.forEach(el => {
-    el.addEventListener('click', menuClick);
-});
-
-function menuClick(e) {
-    if((sunContainer.getAttribute('class') === null) && (nightContainer.getAttribute('class') === null)){
-        sunContainer.style = "display: block;";
-        links.style = "display: block;";
-        nightContainer.setAttribute('class', goDown);
-        sunContainer.setAttribute('class', comeUp);
-        links.setAttribute('class', comeUp);
-    } else if(sunContainer.getAttribute('class') === comeUp){
-        sunContainer.removeAttribute('class');
-        nightContainer.removeAttribute('class');
-        links.removeAttribute('class');
-        void sunContainer.getBBox();
-        void nightContainer.getBBox();
-        void links.offsetWidth;
-        nightContainer.setAttribute('class', comeUp);
-        sunContainer.setAttribute('class', goDown);
-        links.setAttribute('class', goDown);
-        // wait for animation to end
-        setTimeout(function(){links.style = "display: none;"}, 1000);
-    }else if(nightContainer.getAttribute('class') === comeUp){
-        links.style = "display: block;";
-        sunContainer.removeAttribute('class');
-        nightContainer.removeAttribute('class');
-        links.removeAttribute('class');
-        void sunContainer.getBBox();
-        void nightContainer.getBBox();
-        void links.offsetWidth;
-        nightContainer.setAttribute('class', goDown);
-        sunContainer.setAttribute('class', comeUp);
-        links.setAttribute('class', comeUp);
-    }
+function openHamburger(e) {
+    // convert htmlCollection objects to an array
+        hamburger = [...hamburger_svg.children]
+        hamburger.forEach((e,i) => {
+            let class_list = e.classList
+            if (class_list.contains(animation_classes[i])){
+                // reverse the animation
+                e.getAnimations()[0].playbackRate = -1
+                e.getAnimations()[0].onfinish = function() {
+                    class_list.remove(animation_classes[i])
+                }
+            } else {
+                class_list.add(animation_classes[i])
+            }
+        });
 }
