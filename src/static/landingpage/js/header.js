@@ -29,7 +29,6 @@ function openHamburger(e) {
                 }
             } else {
                 class_list.add(animation_classes[i])
-                window.scroll({top: 0, left: 0, behavior: 'smooth'})
                 if (i === hamburger.length - 1){
                     link_container.classList.add("animate_menu")
                     document.body.style.overflow="hidden"
