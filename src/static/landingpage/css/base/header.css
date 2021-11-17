@@ -6,13 +6,14 @@ header {
     grid-template-rows: 1fr auto;
     z-index: 2;
     padding: 0.75em 0;
-    height: 4vh;
     width: 100vw;
     top: 0px;
     right: 0px;
+    height: 5vh;
     left: 0px;
     background-color: var(--background_color);
 }
+
 h1 {
     font-family: var(--header_font);
     font-weight: 600;
@@ -20,9 +21,12 @@ h1 {
     letter-spacing: .07em;
     grid-row: 1;
     grid-column: 1/2;
-    text-align: center;
-    width: 75%;
-    /* margin: 0 5%; */
+    text-align: left;
+    padding: 0 5%;
+    z-index: 3;
+    background: var(--background_color);
+    border: rgba(0 0 0 / 0%) solid;
+    border-width: 0.05em 0.05em 0.05em 0 !important;
 }
 
 .hamburger_button {
@@ -34,8 +38,13 @@ h1 {
     /* Need to center svg inside button */
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    z-index: 3;
+    background: var(--background_color);
+    border: rgba(0 0 0 / 0%) solid;
+    border-width: 0.1em 0 0.1em 0 !important;
 }
+
 
 nav {
     grid-row: 2;
@@ -46,12 +55,6 @@ nav {
 }
 
 
-/* .hamburger {
-    height: 60%;
-    display: block;
-    position: relative;
-} */
-
 .link_container {
     opacity: 0;
     display: flex;
@@ -59,6 +62,8 @@ nav {
     padding: 0.5em 0em;
     background-color: var(--background_color);
     z-index: 1;
+    height: 25vh;
+    box-shadow: 0em 0em 3em 1em rgb(78 89 140 / 40%);
 }
 
 .link_menu {
@@ -67,10 +72,31 @@ nav {
     list-style: none;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+}
+
+.link_button {
+    padding: 5%;
+}
+
+.button_design > a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
 }
 
 main {
     margin-top: calc(5vh + 1.5em);
+}
+
+.active_menu {
+    animation: active_menu 1.4s cubic-bezier(0.85, -0.02, 0, 1.13) both;
+}
+
+@keyframes active_menu {
+    100% {
+        border: solid black;
+    }
 }
 
 @keyframes top-bun-slide-down {
