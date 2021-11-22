@@ -22,7 +22,7 @@ h1 {
     grid-row: 1;
     grid-column: 1/2;
     text-align: left;
-    padding: 0 5%;
+    padding: 0 7%;
     z-index: 3;
     background: var(--background_color);
     border: rgba(0 0 0 / 0%) solid;
@@ -58,10 +58,9 @@ nav {
     opacity: 0;
     display: flex;
     justify-content: center;
-    padding: 0.5em 0em;
     background-color: var(--background_color);
     z-index: 1;
-    height: 25vh;
+    height: 31vh;
     box-shadow: 0em 0em 3em 1em rgb(78 89 140 / 40%);
 }
 
@@ -75,22 +74,20 @@ nav {
 }
 
 .link_button {
-    margin: 4% auto;
+    padding: 4%;
     text-align: center;
     width: 35%;
+    margin: 0 auto;
 }
 
-.link_button:last-child {
-    margin-bottom: 0;
-}
 
-.button_design > a{
+.button_design > a {
     text-decoration: none;
     color: var(--background_color);
     font-size: 1.15em;
     border-radius: 30px;
     background-color: var(--hightlight_color);
-    padding: 8%;
+    padding: 6% 0%;
     display: block;
 }
 
