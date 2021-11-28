@@ -1,4 +1,50 @@
+.home_section {
+    margin-top: calc(5vh + 4em);
+}
+
+.headline {
+    margin: 10% auto;
+    padding: 0.25em;
+    text-align: center;
+    font-size: 1.4em;
+}
+
 p {
     margin: 5%;
     padding: 0.25em;
+}
+
+.home_svg_container {
+    margin: 5%;
+    padding: 0.25em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_svg {
+    margin: 0 10%;
+}
+
+.tagline {
+    text-align: center;
+    margin: 10% auto;
+    width: 25ch;
+    font-size: 0.95em;
+}
+
+.buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+.contactButton {
+    color: var(--background_color);
+    background-color: var(--hightlight_color);
+    padding: 3vw 8vw;
+    border-radius: 30px;
+    border: none;
 }
