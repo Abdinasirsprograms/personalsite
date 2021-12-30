@@ -12,10 +12,9 @@
 p {
     margin: 5%;
     padding: 0.25em;
-    font-size: 1em;
+    font-size: 0.83em;
     line-height: 150%;
-    letter-spacing: 5%;
-    font-size: 0.85em;
+    letter-spacing: 0.04em;
 }
 
 .home_svg_container {
@@ -85,5 +84,5 @@ p {
 }
 
 .section_skills_svg {
-    margin: 5% 0 -2% 3%;
+    margin: 10% 0 -2% 3%;
 }

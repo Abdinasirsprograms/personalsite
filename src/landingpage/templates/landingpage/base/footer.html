@@ -1,6 +1,12 @@
 <footer>
     <ul id="footer">
         <li><span class="footerButtons"><a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></span></li>
-        <li>Abdinasir Noor &copy; <span id="year"></span></li>
+        <li> &copy; 2018-<span id="year"></span> Abdinasir Noor</li>
     </ul>
 </footer>   
+<script>
+    const yearEl = document.querySelector("#year")
+    const today = new Date()
+    const year = today.getFullYear()
+    yearEl.textContent = year
+</script>
