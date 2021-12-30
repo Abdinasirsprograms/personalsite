@@ -1,5 +1,5 @@
 .home_section {
-    margin-top: calc(5vh + 4em);
+    margin-top: calc(5vh + 6em);
 }
 
 .headline {
@@ -12,6 +12,10 @@
 p {
     margin: 5%;
     padding: 0.25em;
+    font-size: 1em;
+    line-height: 150%;
+    letter-spacing: 5%;
+    font-size: 0.85em;
 }
 
 .home_svg_container {
@@ -47,4 +51,39 @@ p {
     padding: 3vw 8vw;
     border-radius: 30px;
     border: none;
+    font-size: 1.0em;
+    font-style: var(--default_font);
+}
+
+/* About section */
+
+#about {
+    margin-top: 35vw;
+}
+
+.section_title_container {
+    position: relative;
+    padding: 25% 0 5% 5%;
+}
+
+.section_title {
+    font-size: 12vw;
+    top: 45%;
+    color: var(--hightlight_color);
+    opacity: 0.65;
+    margin: 0;
+    position: absolute;
+    transform-origin: center;
+    transform: skewX(350deg);
+}
+
+.section_subheading {
+    margin: 5%;
+    padding: 0.25em;
+    font-size: 1.1em;
+    font-style: var(--default_font);
+}
+
+.section_skills_svg {
+    margin: 5% 0 -2% 3%;
 }
