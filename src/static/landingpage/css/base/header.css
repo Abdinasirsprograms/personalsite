@@ -42,6 +42,12 @@ h1 {
     background: var(--background_color);
     border: rgba(0 0 0 / 0%) solid;
     border-width: 0.1em 0 0.1em 0 !important;
+    position: relative;
+}
+
+.hamburger {
+    position: absolute;
+    transform: translate(0.75rem, -0.1rem);
 }
 
 nav {

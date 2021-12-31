@@ -13,7 +13,7 @@ p {
     margin: 5%;
     padding: 0.25em;
     font-size: 0.83em;
-    line-height: 150%;
+    line-height: 1.43rem;
     letter-spacing: 0.04em;
 }
 
@@ -57,16 +57,12 @@ p {
 /* About section */
 
 #about {
-    margin-top: 35vw;
+    margin-top: 20vh;
 }
 
 .section_title_container {
     position: relative;
     padding: 25% 0 10% 5%;
-}
-
-#section_about > .section_title_container:first-child {
-    padding-top: 25vh;
 }
 
 .section_title {
@@ -82,7 +78,6 @@ p {
 
 .section_subheading {
     margin: 4% 5%;
-    padding: 0.25em;
     font-size: 1.1em;
     font-style: var(--default_font);
 }
