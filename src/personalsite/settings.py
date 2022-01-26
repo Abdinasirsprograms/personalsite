@@ -51,15 +51,42 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landingpage',
     'django.contrib.sessions.backends.signed_cookies',
+    # 'corsheaders', #for dev only
+    'django_vite', # trying to setup django with vue
+    'landingpage',
     'loan_calc',
     'newsreader',
+    'tests'
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media_product')
+MEDIA_URL = '/media_product/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [] 
+
+
+# Where ViteJS assets are built.
+DJANGO_VITE_ASSETS_PATH = os.path.join(BASE_DIR,'newsreader/frontend/newsreader/')
+STATICFILES_DIRS.append(DJANGO_VITE_ASSETS_PATH)
+
+# If use HMR or not.
+DJANGO_VITE_DEV_MODE = DEBUG
+
+DJANGO_VITE_DEV_SERVER_HOST = 'localhost'
+DJANGO_VITE_DEV_SERVER_PORT = '3000'
+# CORS_ALLOWED_ORIGINS = [
+# f'http://{DJANGO_VITE_DEV_SERVER_HOST}:{DJANGO_VITE_DEV_SERVER_PORT}'
+# ]
+# CORS_ALLOW_ALL_ORIGINS = True
+# Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
+# when run command python manage.py collectstatic
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware', #for dev only
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,15 +163,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media_product')
-MEDIA_URL = '/media_product/'
-STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # only for local testing
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'
@@ -155,3 +181,4 @@ EMAIL_USE_TLS = True
 # EMAIL_SSL_CERTFILE = '/etc/letsencrypt/live/abdinasirnoor.com-0001/cert.pem'
 # EMAIL_SSL_KEYFILE = '/etc/letsencrypt/live/abdinasirnoor.com-0001/privkey.pem'
 DEFAULT_FROM_EMAIL = 'Abdinasir <Abdinasir@abdinasirnoor.com>'
+

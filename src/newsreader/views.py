@@ -1,10 +1,15 @@
+import json
 from django.http import JsonResponse
-from django.core.paginator import Paginator
+from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import ensure_csrf_cookie
 from django.shortcuts import render
 from .models import *
+import logging
+logging.basicConfig(level=logging.DEBUG) # Here
 
+@ensure_csrf_cookie
 def display_html(request):
-        return render(request, 'newsreader/index.html')
+        return render(request, 'newsreader/base.html')
 
 def pull_articles(request, language):
         # data = Article_links.objects.filter(site__language=language).order_by('-date_posted')[:50]
@@ -26,5 +31,14 @@ def pull_articles(request, language):
                 context[site.domain] = content
         return JsonResponse({'data': context})
 
-def display_article(request):
-        return render(request, 'weather/base.html')
+@require_http_methods(['POST'])
+def return_proxy(request):
+        try:
+                received_data = json.loads(request.body)
+                if not received_data: raise ValueError
+                return JsonResponse({'status': 'loading'})
+
+        except ValueError:
+                logging.error(f'\n!!! \nPOST data is empty: {request.POST} I think? : {received_data}\n!!!')
+                return JsonResponse({'receivedValue': received_data}, status="400")
+        

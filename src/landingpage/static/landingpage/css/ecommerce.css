@@ -1,0 +1,95 @@
+.ml-6 {
+  margin-left:5rem!important;
+}
+.hotPhoto {
+  max-height: 15rem!important;
+  max-width: 15rem!important;
+}
+.bottomPosition {
+  vertical-align: text-top;
+  font-size: 1.75rem;
+}
+.toplineWrapper {
+  justify-content: space-around!important;
+}
+.card-title {
+  text-shadow:
+  -1px -1px 1px #000,
+  1px -1px 1px #000,
+  -1px 1px 1px #000,
+  1px 1px 1px #000;
+}
+.card-img-overlay {
+  padding: 0!important;
+}
+.overlay-title {
+    font-size: 1.25rem!important;
+    margin: 0!important;
+}
+.productPhoto {
+  max-height: 20rem!important;
+  max-width: 20rem!important;
+}
+.quantityResponsive {
+  width: 50%!important;
+}
+
+
+@media only screen and (min-device-width: 576px) {
+  .ml-6 {
+    margin-left:0rem!important;
+  }
+  .hotPhoto {
+    max-height: 15rem!important;
+    max-width: 12rem!important;
+  }
+  .overlay-title {
+      font-size: 2rem!important;
+  }
+  .quantityResponsive {
+    width: 25%!important;
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .hotPhoto {
+    max-height: 15rem!important;
+    max-width: 15rem!important;
+  }
+  .overlay-title {
+      font-size: 2rem!important;
+  }
+  .toplineWrapper{
+    justify-content: center!important;
+  }
+}
+
+@media only screen and (min-device-width: 992px) {
+  .hotPhoto {
+    max-height: 17rem!important;
+    max-width: 17rem!important;
+  }
+  .productPhoto {
+    max-height: 28rem!important;
+    max-width: 28rem!important;
+  }
+  .overlay-title {
+      font-size: 2rem!important;
+  }
+  .toplineWrapper{
+    justify-content: center!important;
+  }
+}
+
+@media only screen and (min-device-width: 1200px) {
+  .hotPhoto {
+    max-height: 19rem!important;
+    max-width: 19rem!important;
+  }
+  .overlay-title {
+      font-size: 2rem!important;
+  }
+  .toplineWrapper{
+    justify-content: center!important;
+  }
+}

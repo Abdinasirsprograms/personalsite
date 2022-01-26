@@ -71,7 +71,7 @@ def eccomerce(request):
                 cart_info = cart_info.values('count').get()['count']
             else:
                 cart_info = 0
-        return render(request,'eccomerce/base.html',context={"products":query,"cart":cart_info,"products_added":products_added_already})
+        return render(request,'ecommerce/base.html',context={"products":query,"cart":cart_info,"products_added":products_added_already})
 
 def Push_to_cart(request, pk):
         value = request.session['cart_id']
@@ -98,7 +98,7 @@ def product_view(request, slug):
             query_image = list(query_unclean_image.values('product_images'))
         query_data = {'query':query,'query_image':query_image, 'query_product_id': query_product_id,}
         context = {'product': query_data}
-        return render(request,'landingpage/product_view.html',context)
+        return render(request,'ecommerce/product_view.html',context)
 
 def Cart_view(request):
     value = request.session['cart_id']
@@ -117,7 +117,7 @@ def Cart_view(request):
     else:
         cart_obj = None
         context = {'cart':cart_obj}
-    return render(request,'landingpage/cart.html',context)
+    return render(request,'ecommerce/cart.html',context)
 #
 #     if request.POST:
 #         # Get the product's ID from the POST request.

@@ -72,7 +72,7 @@ class product(models.Model):
         stock = models.PositiveIntegerField()
         created_at = models.DateTimeField(auto_now_add=True)
         updated_at = models.DateTimeField(auto_now=True)
-        def image_folder_path(self, instance):
+        def image_folder_path(instance):
             return os.path.join(instance.product_name, instance.product_name + ".jpeg")
         image = models.ImageField(upload_to=image_folder_path, blank=True)
 
@@ -86,12 +86,13 @@ class Product_images(models.Model):
         product_foreign = models.ForeignKey(product, related_name='Product_images', on_delete=models.CASCADE)
         def image_path(self, instance):
             # query = product.objects.filter('product_name').objects.all()
-            return os.path.join(str(product.objects.get(id=(instance.product_foreign_id))).replace('product',''),
-            instance.image_name + ".jpeg")
+            return os.path.join(str(product.objects.get(id=(self.product_foreign_id))).replace('product',''),
+            instance + ".jpeg")
         product_images = models.ImageField(upload_to=image_path)
         image_name = models.CharField(max_length=100, db_index=True)
         slug = models.SlugField(max_length=100, db_index=True)
-
+        def __str__(self):
+            return self.image_name
         class Meta:
             verbose_name = 'product images'
             verbose_name_plural = 'product images'

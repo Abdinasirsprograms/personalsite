@@ -1,5 +1,8 @@
 {% extends "landingpage/base.html"%}
+
+{% load django_vite %}
 {% load static %}
+
 {% block title %} News Reader | Abdinasir Noor {% endblock %}
 
 {% block css %}
@@ -8,17 +11,15 @@
 
 {% block content %}
 <main>
-    <h1>
-        This is the article feed:
-    </h1>
-    <div id="content">
-        <div id="article-container">
-            
-        </div>
-    </div>
+    <div id="app"></div>
 </main>
 {% endblock %}
 
 {% block js %}
+
+{% vite_hmr_client %}
+{% vite_asset 'src/main.ts' %}
+
+
 <script src="{% static 'newsreader/js/index.js' %}"></script>
 {% endblock %}

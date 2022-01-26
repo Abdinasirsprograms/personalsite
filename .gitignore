@@ -16,3 +16,13 @@ desktop.ini
 .vscode/settings.json
 src/.vscode/settings.json
 __pycache__
+src/newsreader/frontend/newsreader/src/assets/logo.png
+src/newsreader/frontend/newsreader/public/favicon.ico
+src/newsreader/frontend/newsreader/README.md
+src/newsreader/frontend/newsreader/node_modules
+src/newsreader/frontend/newsreader/.DS_Store
+src/newsreader/frontend/newsreader/dist
+src/newsreader/frontend/newsreader/dist-ssr
+src/newsreader/frontend/newsreader/*.local
+src/newsreader/frontend/newsreader/.vscode/extensions.json
+**/package-lock.json

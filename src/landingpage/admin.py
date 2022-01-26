@@ -5,10 +5,12 @@ from django.utils.safestring import mark_safe
 
 class ReadDate(admin.ModelAdmin):
     readonly_fields = ('date_field',)
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['category_name', 'category_slug']
     prepopulated_fields = {'category_slug': ('category_name',)}
-class Product_images(admin.TabularInline):
+    
+class Product_images_admin(admin.TabularInline):
     model = Product_images
     prepopulated_fields = {'slug': ('image_name',)}
     readonly_fields = ["current_image"]
@@ -19,7 +21,7 @@ class Product_images(admin.TabularInline):
     )
 class ProductAdmin(admin.ModelAdmin):
     inlines = [
-        Product_images,
+        Product_images_admin,
     ]
     list_display = ['product_name', 'description', 'price', 'available', 'stock', 'created_at', 'updated_at']
     list_filter = ['available', 'created_at', 'updated_at']
