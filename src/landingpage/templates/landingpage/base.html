@@ -70,8 +70,13 @@ _M_      \M  YMMMMM9   YMMMMM9 _MM_
         --header_font: 'Open Sans';
         --tagline_font: 'Poppins', serif;
         --default_font: 'Merriweather Sans', sans-serif;
-        --hightlight_color: rgb(78 89 140);
-        --background_color: rgb(241 241 248);
+        --hightlight_color: rgba(35, 44, 82, 0.85);
+        --background: repeating-linear-gradient(180deg, rgb(54 80 156 / 51%) 0%, rgb(18 25 69 / 42%) 50%,  rgb(90 0 0 / 22%) 100%);
+        --background_color: rgb(211, 215, 217);
+        --svg_background_color: rgb(227, 227, 256);
+        --svg_secondary_background_color: #000;
+        --led_primary: red;
+        --led_secondary: green;
     }
 
     * {
@@ -81,16 +86,16 @@ _M_      \M  YMMMMM9   YMMMMM9 _MM_
     }
 
     body {
-        height: 100vh;
-        max-width: 100vw;
         overflow-x: hidden;
         scroll-behavior: smooth;
-        background-color: var(--background_color);
+        background: var(--background);
     }
 
     p {
         font-weight: 500;
         font-family: var(--default_font);
+        stroke: #000;
+        stroke-width: 3px;
     }
     </style>
     <link rel="stylesheet" type="text/css" href="{% static 'landingpage/css/base/header.css' %}">
