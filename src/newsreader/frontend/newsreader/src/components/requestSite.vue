@@ -2,19 +2,29 @@
 <div>
   <input type="text" v-model="payload.site_url" @keyup.enter="getData(payload)">
   <br>
+  <br>
+  <br>
+  <br>
+  <div v-if="loading_state">
+    <h1>Loading....<span class="animate_load_state"></span></h1>
+  </div>
+  <h1 v-if="recieved_html_response">Error Recived: {{recieved_html_response}}</h1>
 </div>
 </template>
 
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'HTTP_X_CSRFTOKEN'
 
-const payload: { site_url: string; } = reactive({
+const payload = reactive({
     site_url: '',
 })
+
+let recieved_html_response = ref('')
+let loading_state= ref(false)
 
 const cookie = document.cookie
 const optionalHeaders = {'X-CSRFToken':'',
@@ -41,17 +51,13 @@ const sitePOSTconfig: AxiosRequestConfig = {
     
 }
 
-function getData(payload: any){
-  console.warn(payload)
-  const dataResponse = axios.post('http://localhost:80/projects/newsreader/submit-url', payload, sitePOSTconfig)
-  .then((res) => {return res.data}).catch((err) => {return err})
-  const cleanedRes = handleResponse(dataResponse)
+async function getData(payload: any){
+  loading_state.value = true
+  const dataResponse = await axios.post('http://localhost:80/projects/newsreader/submit-url', payload, sitePOSTconfig)
+  .catch((err) => {recieved_html_response.value = err})
 }
 
-async function handleResponse(data: Promise<AxiosResponse<any, any>>){
-  console.log('this is what\'s recieved:', await data)
-  return data
-}
+
 
 
 </script>
@@ -72,5 +78,17 @@ code {
   padding: 2px 4px;
   border-radius: 4px;
   color: #304455;
+}
+.animate_load_state::before {
+  position: absolute;
+  content: "⌛";
+  opacity: 0;
+  animation: 750ms clock_animation_show 100ms ease-in-out alternate infinite;
+}
+
+@keyframes clock_animation_show {
+  100% {
+    opacity: 1;
+  }
 }
 </style>

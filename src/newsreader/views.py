@@ -1,10 +1,14 @@
 import json
-from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods
-from django.views.decorators.csrf import ensure_csrf_cookie
-from django.shortcuts import render
-from .models import *
 import logging
+from codecs import decode 
+from django.http import JsonResponse
+from django.template.loader import get_template, render_to_string 
+from django.shortcuts import render
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.http import require_http_methods
+
+from .models import *
+
 logging.basicConfig(level=logging.DEBUG) # Here
 
 @ensure_csrf_cookie
@@ -34,11 +38,19 @@ def pull_articles(request, language):
 @require_http_methods(['POST'])
 def return_proxy(request):
         try:
-                received_data = json.loads(request.body)
-                if not received_data: raise ValueError
-                return JsonResponse({'status': 'loading'})
+                received_data = json.loads(request.body) #json.loads()
+                if 'site_url' not in received_data: raise ValueError
+                # TODO:
+                # setup the pulling site data
+                # then injecting vite assets                
+                return JsonResponse(received_data)
 
         except ValueError:
-                logging.error(f'\n!!! \nPOST data is empty: {request.POST} I think? : {received_data}\n!!!')
+                logging.error(f'\n!!! \nPOST data is empty: {received_data}\n!!!')
                 return JsonResponse({'receivedValue': received_data}, status="400")
         
+        except Exception as e:
+                logging.error(f'failed for unknown reason: ')
+                data = {'unkown failure':f'{e}','receivedValue': received_data}
+                return JsonResponse(data, status="500", safe=False)
+

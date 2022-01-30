@@ -1,18 +1,20 @@
-import os
-import datetime
 import collections
-import django
+import datetime
+import os
 import time
+
+import django
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
 django.setup()
-from django.db import models 
-from newsreader.models import Article_site, Article_links, Article_content
-
+from django.db import models
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from newsreader.models import Article_content, Article_links, Article_site
 
 
 class Article_data:

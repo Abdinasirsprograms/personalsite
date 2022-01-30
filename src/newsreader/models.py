@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+
+
 class Article_site(models.Model):
     link_to_site = models.URLField()
     domain = models.CharField(max_length=80)

@@ -1,12 +1,15 @@
-import os
-import datetime
 import collections
+import datetime
+import os
+
 import django
 from selenium import webdriver
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
 django.setup()
-from django.db import models 
-from newsreader.models import Article_site, Article_links
+from django.db import models
+
+from newsreader.models import Article_links, Article_site
 
 
 class Site_data:
