@@ -27,6 +27,8 @@ class Article_site(models.Model):
     
     def __str__(self):
         return f"{self.domain} - {self.language}"
+
+
 class Article_links(models.Model):
     article_link = models.URLField(max_length=255, unique=True) 
     site = models.ForeignKey(Article_site, on_delete=models.CASCADE, verbose_name="article's main site")
@@ -41,6 +43,8 @@ class Article_links(models.Model):
 
     def __str__(self):
         return f"{self.title} * from {self.site}"
+
+        
 class Article_content(models.Model):
     title = models.CharField(max_length=255)
     date_posted = models.DateField(null=True, blank=True)

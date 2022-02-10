@@ -11,6 +11,8 @@ mysqlclient = "*"
 pillow = "*"
 selenium = "*"
 django-vite = "*"
+daphne = "*"
+channels = "*"
 
 [requires]
 python_version = "3.9"

@@ -3,15 +3,38 @@ import datetime
 import os
 
 import django
+from django.utils.http import urlencode
 from selenium import webdriver
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
-django.setup()
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
+# django.setup()
 from django.db import models
 
 from newsreader.models import Article_links, Article_site
 
 
+class requestWebsite:
+        def __init__(self, site_url: str, session=None):
+            print('initializing webdriver')
+            self._option = webdriver.firefox.options.Options()
+            self._option.headless = True
+            self._driver = webdriver.Firefox(options = self._option)
+            self._driver.implicitly_wait(5)
+            if session:  self.session = session
+            else: self.session = self._driver.session_id
+            if not site_url: raise ValueError
+            self.site_url = site_url
+            if 'https' not in self.site_url: self.site_url = 'https://' + self.site_url
+            if '.com' not in self.site_url: self.site_url = self.site_url + '.com'
+            try:
+                self._driver.get(self.site_url)
+            except Exception as e:
+                print(e)
+
+        def getDriver(self):
+            print('sending driver back as requested!!')
+            return self._driver
+                
 class Site_data:
     def __init__(self):
         option = webdriver.firefox.options.Options()
