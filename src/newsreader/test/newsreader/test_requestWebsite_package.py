@@ -1,8 +1,29 @@
-from cmath import log
 from django.test import TestCase
+
+from newsreader.views import websiteConsumer
 
 
 # class websiteRequestModelEngine(TestCase):
+
+
+class SaveWebsiteContentWithCSS(TestCase):
+    def setUp(self):
+        self.SAFE_WORD = 'CLOSE_CONNECTION'
+
+    async def test_website_consumer(self):
+        from channels.testing import WebsocketCommunicator
+        communicator = WebsocketCommunicator(websiteConsumer.as_asgi(), "/newsreader")
+        connected, subprotocol = await communicator.connect()
+        assert connected
+        # Test sending text
+        await communicator.send_to(text_data="google.com")
+        # TODO:
+        # async error??
+        await communicator.send_to(text_data=self.SAFE_WORD)
+        response = await communicator.receive_from()
+        # Close
+        assert response == 'disconnect'
+        await communicator.disconnect()
 
 
 class VisitValidLinkTest(TestCase):
@@ -24,8 +45,8 @@ class VisitValidLinkTest(TestCase):
         logged_session = self.re.session
         true_session = self.re._driver.session_id
         self.assertEqual(logged_session, true_session)
-
-
+    
     def tearDown(self) -> None:
         self._driver.quit()
         self.re._driver.quit()
+

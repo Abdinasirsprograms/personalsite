@@ -1,21 +1,15 @@
 import json
 import logging
-from codecs import decode 
-from django.http import JsonResponse, request
-from django.template.response import TemplateResponse
-from django.template.loader import get_template, render_to_string
-from django.shortcuts import redirect, render
-from django.views.decorators.csrf import ensure_csrf_cookie
-from django.views.decorators.http import require_http_methods
-from newsreader.pull_site_data import requestWebsite
-from .models import *
-import asyncio
-
 
 from channels.generic.websocket import JsonWebsocketConsumer
+from django.http import JsonResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.http import require_http_methods
 
-from django.utils.decorators import sync_and_async_middleware
+from newsreader.pull_site_data import requestWebsite
 
+from .models import Article_links, Article_site
 
 logging.basicConfig(level=logging.DEBUG) # Here
 
@@ -43,7 +37,7 @@ def pull_articles(request, language):
                 context[site.domain] = content
         return JsonResponse({'data': context})
 
-class webstiteConsumer(JsonWebsocketConsumer):
+class websiteConsumer(JsonWebsocketConsumer):
         def __init__(self, *args, **kwargs):
             self.sessionID = ''
             super().__init__(*args, **kwargs)
@@ -70,7 +64,7 @@ class webstiteConsumer(JsonWebsocketConsumer):
         def setup_browser(self, url):
                 print('inside setting up browser')
                 # setup saving source and serving all css locally
-                return requestWebsite(url).getDriver().page_source
+                return requestWebsite(url).savePage(url)
         
         def disconnect(self, code):
                 print('Disconnecting...')

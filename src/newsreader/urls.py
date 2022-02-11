@@ -20,7 +20,7 @@ from django.urls import path
 from newsreader.views import *
 urlpatterns = [
     path('', display_html, name="display_html"),
-    path('newsreader', webstiteConsumer.as_asgi(), name="webstiteConsumer"),
+    path('newsreader', websiteConsumer.as_asgi(), name="webstiteConsumer"),
     path('submit-url', return_proxy, name='return_proxy'),
     path('pull_articles/<str:language>', pull_articles, name="pull_articles"),
 ] 
