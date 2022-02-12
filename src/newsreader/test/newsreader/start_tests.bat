@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\Abdinasir\Documents\personalsite\.venv"
+set "VIRTUAL_ENV=F:\0 Projects\personalsite\.venv"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
@@ -37,5 +37,5 @@ if defined _OLD_VIRTUAL_PATH goto ENDIFVPATH2
 :ENDIFVPATH2
 
 set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
-@REM 
-python.exe "C:\Users\Abdinasir\Documents\personalsite\src\manage.py" test newsreader.tests
+@REM run tests
+python.exe "F:\0 Projects\personalsite\src\manage.py" test newsreader.test.newsreader.test_requestWebsite_package.SaveWebsiteContent

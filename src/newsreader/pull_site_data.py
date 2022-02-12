@@ -1,14 +1,9 @@
+import asyncio
 import collections
 import datetime
-import os
 
-import django
 from django.utils.http import urlencode
 from selenium import webdriver
-
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "personalsite.settings")
-# django.setup()
-from django.db import models
 
 from newsreader.models import Article_links, Article_site
 
@@ -28,24 +23,26 @@ class requestWebsite:
             self.site_url = site_url
             if 'https' not in self.site_url: self.site_url = 'https://' + self.site_url
             if '.com' not in self.site_url: self.site_url = self.site_url + '.com'
+
+        def sendDriverComand(self, command, arg):
+            print(f'sending driver {command} with {arg}')
+            return asyncio.run(self._driver.comamnd(arg))
+                
+        def shutDown(self):
             try:
-                self._driver.get(self.site_url)
+                self.sendDriverComand('quit', '')
             except Exception as e:
                 print(e)
+                return False
 
-        def getDriver(self):
-            print('sending driver back as requested!!')
-            return self._driver
-                
+        def savePage(self):
+            try:
+                response = self.sendDriverComand('get', self.site_url).page_source
+                return response
+            except Exception as e:
+                print(e)
+                return False
 
-        def savePage(self, url):
-            
-            pass
-
-        # setting this up so commands can be issued as an API
-        def sendCommand(self, command, *args):
-            print('sending command...')
-            return self._driver.command(*args)
 
 
 

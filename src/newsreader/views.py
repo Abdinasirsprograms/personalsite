@@ -40,9 +40,12 @@ def pull_articles(request, language):
 class websiteConsumer(JsonWebsocketConsumer):
         def __init__(self, *args, **kwargs):
             self.sessionID = ''
+            self.ICEngine = ''
             super().__init__(*args, **kwargs)
 
         def close_connection(self):
+                if self.ICEngine:
+                        self.ICEngine.shutDown()
                 self.close()   
 
         def websocket_connect(self, message):
@@ -58,17 +61,16 @@ class websiteConsumer(JsonWebsocketConsumer):
                 if message == 'CLOSE_CONNECTION':
                         self.close_connection()
                 else:
-                        self.sessionID = self.setup_browser(message)
+                        self.sessionID = self.setup_browser(message).session
                         self.send_json(self.sessionID)
 
         def setup_browser(self, url):
                 print('inside setting up browser')
                 # setup saving source and serving all css locally
-                return requestWebsite(url).savePage(url)
+                self.ICEngine = requestWebsite(url) 
         
         def disconnect(self, code):
                 print('Disconnecting...')
-                requestWebsite.getDriver().quit()
                 return super().disconnect(1000)
 
 def start_site_request(request, site_url):
