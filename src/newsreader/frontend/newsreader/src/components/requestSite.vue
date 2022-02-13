@@ -5,7 +5,7 @@
   <br>
   <div>
   </div>
-  <button v-if ="connected" @click="close_connection()">Close connection</button>
+  <button v-if ="connected || recieved_html_response" @click="close_connection()">Close connection</button>
   <button v-else  @click="send_payload()">+ Add website</button>
   <div v-if="recieved_html_response">
     <h1>Message recieved from server : </h1>
@@ -52,6 +52,7 @@ const send_message = (message: string) => {
     }
     webSocket.onmessage = ({data}) => {
       parseResponseHTML(data)
+      payload.site_url = ''
     }
 }
 
@@ -71,7 +72,7 @@ const parseResponseHTML = (data) => {
     const responseData = new DOMParser().parseFromString(data, 'text/html')
     data = responseData.querySelector('body').outerHTML
     recieved_html_response.value = data
-    // document.querySelector('html').innerHTML = combinedHTML
+    // document.querySelector('html').appendChild(responseData)
 
 }
 

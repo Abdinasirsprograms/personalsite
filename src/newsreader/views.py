@@ -1,7 +1,7 @@
 import json
 import logging
 
-from channels.generic.websocket import JsonWebsocketConsumer
+from channels.generic.websocket import AsyncJsonWebsocketConsumer
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -12,6 +12,58 @@ from newsreader.pull_site_data import requestWebsite
 from .models import Article_links, Article_site
 
 logging.basicConfig(level=logging.DEBUG) # Here
+import asyncio
+
+
+
+
+class websiteConsumer(AsyncJsonWebsocketConsumer):
+        def __init__(self, *args, **kwargs):
+            self.sessionID = ''
+            super().__init__(*args, **kwargs)
+
+        async def close_connection(self):
+                print('Closing connection?!?!')
+                await self.close()   
+
+        async def websocket_connect(self, message):
+                print('Accpeting connection...')
+                return await self.accept()
+
+        # TODO:
+        # send back loading message 
+        # after verifying URL
+        # send back html source
+        async def websocket_receive(self, message):
+                message = message.get('text')
+                if message == 'CLOSE_CONNECTION':
+                        await self.close_connection()
+                else:
+                        self.sessionID = await self.sendResponse(self.setup_browser(message))
+                        
+        async def sendResponse(self, message=None, id=None):
+                await self.send_json(message, id)
+
+        def setup_browser(self, url):
+                print('inside setting up browser')
+                # setup saving source and serving all css locally
+                response = requestWebsite(url).getPage()
+                return response
+        
+        def websocket_disconnect(self, code):
+                print('Disconnecting...')
+
+
+
+
+
+
+
+
+
+
+
+
 
 @ensure_csrf_cookie
 def display_html(request):
@@ -37,41 +89,6 @@ def pull_articles(request, language):
                 context[site.domain] = content
         return JsonResponse({'data': context})
 
-class websiteConsumer(JsonWebsocketConsumer):
-        def __init__(self, *args, **kwargs):
-            self.sessionID = ''
-            self.ICEngine = ''
-            super().__init__(*args, **kwargs)
-
-        def close_connection(self):
-                if self.ICEngine:
-                        self.ICEngine.shutDown()
-                self.close()   
-
-        def websocket_connect(self, message):
-                print('Accpeting connection...')
-                return self.accept()
-
-        # TODO:
-        # send back loading message 
-        # after verifying URL
-        # send back html source
-        def websocket_receive(self, message):
-                message = message.get('text')
-                if message == 'CLOSE_CONNECTION':
-                        self.close_connection()
-                else:
-                        self.sessionID = self.setup_browser(message).session
-                        self.send_json(self.sessionID)
-
-        def setup_browser(self, url):
-                print('inside setting up browser')
-                # setup saving source and serving all css locally
-                self.ICEngine = requestWebsite(url) 
-        
-        def disconnect(self, code):
-                print('Disconnecting...')
-                return super().disconnect(1000)
 
 def start_site_request(request, site_url):
         # site_retrieved = requestWebsite(site_url)

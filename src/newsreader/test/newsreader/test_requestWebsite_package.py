@@ -14,9 +14,9 @@ class SaveWebsiteContent(SimpleTestCase):
         await communicator.send_to(text_data="google.com")
         # # TODO:
         # # async error??
-        # response = await communicator.receive_from()
-        # print(response)
-        # await communicator.send_to(text_data=self.SAFE_WORD)
+        response = await communicator.receive_from()
+        assert type(response) == 'string'
+        await communicator.send_to(text_data=SAFE_WORD)
         # response = await communicator.receive_from()
         # # Close
         # assert response == 'disconnect'

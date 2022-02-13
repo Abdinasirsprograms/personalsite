@@ -1,13 +1,18 @@
-import asyncio
 import collections
 import datetime
 
-from django.utils.http import urlencode
 from selenium import webdriver
 
 from newsreader.models import Article_links, Article_site
 
 
+'''
+# TODO:
+1. session should be a property so that it can be freely passed around
+each and every instance of requestWebsite object ??
+
+2.  website save page should save CSS and ignore JS
+'''
 class requestWebsite:
         def __init__(self, site_url: str, session=None):
             print('initializing webdriver')
@@ -24,23 +29,25 @@ class requestWebsite:
             if 'https' not in self.site_url: self.site_url = 'https://' + self.site_url
             if '.com' not in self.site_url: self.site_url = self.site_url + '.com'
 
-        def sendDriverComand(self, command, arg):
-            print(f'sending driver {command} with {arg}')
-            return asyncio.run(self._driver.comamnd(arg))
-                
         def shutDown(self):
             try:
-                self.sendDriverComand('quit', '')
+                self._driver.quit()
             except Exception as e:
                 print(e)
                 return False
 
-        def savePage(self):
+        def getPage(self):
             try:
-                response = self.sendDriverComand('get', self.site_url).page_source
+                driver = self._driver
+                driver.get(self.site_url)
+                response = driver.page_source
+                print('sending response.....')
                 return response
             except Exception as e:
+                print('trying to get the page source -_- \n','*'*40) 
                 print(e)
+                print('\n' + '*'*40)
+                self.shutDown()
                 return False
 
 
