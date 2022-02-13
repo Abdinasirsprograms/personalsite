@@ -28,8 +28,11 @@ const payload = reactive({
 })
 
 let recieved_html_response = ref('')
+
 const webSocketObject = () => {
-  return new WebSocket('ws://localhost:80/newsreader')}
+  return new WebSocket('ws://localhost:80/newsreader')
+}
+
 let init = ref(false)
 let connected = ref(false)
 const safe_word = 'CLOSE_CONNECTION' 

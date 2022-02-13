@@ -15,12 +15,13 @@ class SaveWebsiteContent(SimpleTestCase):
         # # TODO:
         # # async error??
         response = await communicator.receive_from()
-        assert type(response) == 'string'
+        print("*"*40, '\n','\n')
+        print(f'TEST CLIENT RESPONSE TYPE RECIEVED: {type(response)}')
+        print("*"*40, '\n','\n')
+        assert response
         await communicator.send_to(text_data=SAFE_WORD)
-        # response = await communicator.receive_from()
-        # # Close
-        # assert response == 'disconnect'
-        await communicator.disconnect()
+        response = await communicator.receive_from()
+        print(response)
 
 
 class VisitValidLinkTest(TestCase):

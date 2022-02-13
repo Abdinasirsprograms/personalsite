@@ -12,9 +12,14 @@ from newsreader.models import Article_links, Article_site
 each and every instance of requestWebsite object ??
 
 2.  website save page should save CSS and ignore JS
+
+3. Object should be able to be created and destroyed without sideffects!!
 '''
 class requestWebsite:
-        def __init__(self, site_url: str, session=None):
+        def __init__(self):
+            pass
+
+        def startUp(self, site_url, session=None):
             print('initializing webdriver')
             self._option = webdriver.firefox.options.Options()
             self._option.headless = True
@@ -41,7 +46,7 @@ class requestWebsite:
                 driver = self._driver
                 driver.get(self.site_url)
                 response = driver.page_source
-                print('sending response.....')
+                print(f'sending page source as str {type(response)}')
                 return response
             except Exception as e:
                 print('trying to get the page source -_- \n','*'*40) 

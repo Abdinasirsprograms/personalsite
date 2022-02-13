@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
 from django.http import JsonResponse
@@ -20,35 +21,49 @@ import asyncio
 class websiteConsumer(AsyncJsonWebsocketConsumer):
         def __init__(self, *args, **kwargs):
             self.sessionID = ''
+            self.requestObjectCreated = False
             super().__init__(*args, **kwargs)
 
-        async def close_connection(self):
-                print('Closing connection?!?!')
-                await self.close()   
+
 
         async def websocket_connect(self, message):
                 print('Accpeting connection...')
+                if not self.requestObjectCreated:
+                        self.requestObj = requestWebsite
+                        self.requestObjectCreated = True   
                 return await self.accept()
 
         # TODO:
-        # send back loading message 
-        # after verifying URL
-        # send back html source
-        async def websocket_receive(self, message):
-                message = message.get('text')
-                if message == 'CLOSE_CONNECTION':
-                        await self.close_connection()
-                else:
-                        self.sessionID = await self.sendResponse(self.setup_browser(message))
-                        
-        async def sendResponse(self, message=None, id=None):
-                await self.send_json(message, id)
+        '''
+        when you get the first message ->
+                create requestobject with URL ->
+                .... {
+                        send getPage request ->
+                                do what you gotta do 🔃
+                        <- send shutDown request
+                } ....
+                                maybe wrap in a manager like IO???
+        '''
 
-        def setup_browser(self, url):
-                print('inside setting up browser')
-                # setup saving source and serving all css locally
-                response = requestWebsite(url).getPage()
-                return response
+        async def websocket_receive(self, message):
+                url = message.get('text')
+                if url == 'CLOSE_CONNECTION':
+                        await self.sendResponse('closing connection....')
+                        print(id(self.requestObj))
+                        self.requestObj.shutDown()
+                        await self.close()
+                else:
+                        print('id of class after successful connection:', id(self.requestObj))
+                        self.requestObj = self.requestObj()
+                        print('requestWebsite object Instantiated in function!', id(self.requestObj))
+                        self.requestObj.startUp(url)
+                        await self.sendResponse(message=self.requestObj.getPage())
+                        
+
+
+        async def sendResponse(self, message=None, id=None):
+                print(f'sending message back to websocket client... {type(message)}')
+                await self.send_json(message, id)
         
         def websocket_disconnect(self, code):
                 print('Disconnecting...')
