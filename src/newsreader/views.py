@@ -28,9 +28,6 @@ class websiteConsumer(AsyncJsonWebsocketConsumer):
 
         async def websocket_connect(self, message):
                 print('Accpeting connection...')
-                if not self.requestObjectCreated:
-                        self.requestObj = requestWebsite
-                        self.requestObjectCreated = True   
                 return await self.accept()
 
         # TODO:
@@ -47,36 +44,22 @@ class websiteConsumer(AsyncJsonWebsocketConsumer):
 
         async def websocket_receive(self, message):
                 url = message.get('text')
-                if url == 'CLOSE_CONNECTION':
-                        await self.sendResponse('closing connection....')
-                        print(id(self.requestObj))
-                        self.requestObj.shutDown()
-                        await self.close()
-                else:
-                        print('id of class after successful connection:', id(self.requestObj))
-                        self.requestObj = self.requestObj()
-                        print('requestWebsite object Instantiated in function!', id(self.requestObj))
-                        self.requestObj.startUp(url)
-                        await self.sendResponse(message=self.requestObj.getPage())
+                if url != 'CLOSE_CONNECTION':
+                        self.requestObj = requestWebsite()
+                        self.requestObj.startEngine(url)
+                        await self.send_json(self.requestObj.getPage())
                         
+                else:
+                        await self.send_json('closing connection....')
+                        try:
+                                self.requestObj.shutDown()
+                        except AttributeError:
+                                # this is to avoid a race condition in case requestObj hasn't been created
+                                pass
+                        await self.close()
 
-
-        async def sendResponse(self, message=None, id=None):
-                print(f'sending message back to websocket client... {type(message)}')
-                await self.send_json(message, id)
-        
         def websocket_disconnect(self, code):
                 print('Disconnecting...')
-
-
-
-
-
-
-
-
-
-
 
 
 

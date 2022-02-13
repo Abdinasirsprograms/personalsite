@@ -10,10 +10,7 @@ class SaveWebsiteContent(SimpleTestCase):
         connected = await communicator.connect()
         SAFE_WORD = 'CLOSE_CONNECTION'
         assert connected
-        # Test sending text
         await communicator.send_to(text_data="google.com")
-        # # TODO:
-        # # async error??
         response = await communicator.receive_from()
         print("*"*40, '\n','\n')
         print(f'TEST CLIENT RESPONSE TYPE RECIEVED: {type(response)}')
@@ -21,7 +18,6 @@ class SaveWebsiteContent(SimpleTestCase):
         assert response
         await communicator.send_to(text_data=SAFE_WORD)
         response = await communicator.receive_from()
-        print(response)
 
 
 class VisitValidLinkTest(TestCase):

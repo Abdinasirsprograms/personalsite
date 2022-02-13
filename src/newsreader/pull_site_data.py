@@ -16,10 +16,7 @@ each and every instance of requestWebsite object ??
 3. Object should be able to be created and destroyed without sideffects!!
 '''
 class requestWebsite:
-        def __init__(self):
-            pass
-
-        def startUp(self, site_url, session=None):
+        def startEngine(self, site_url, session=None):
             print('initializing webdriver')
             self._option = webdriver.firefox.options.Options()
             self._option.headless = True
