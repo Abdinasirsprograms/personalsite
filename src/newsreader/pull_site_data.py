@@ -17,17 +17,22 @@ each and every instance of requestWebsite object ??
 '''
 class requestWebsite:
         def startEngine(self, site_url, session=None):
+            site_url_empty = bool(len(site_url.strip()) == 0)
+            if site_url_empty: 
+                raise ValueError
+            else:
+                self.site_url = site_url
             print('initializing webdriver')
             self._option = webdriver.firefox.options.Options()
             self._option.headless = True
             self._option.javascriptEnabled = False
             self._driver = webdriver.Firefox(options = self._option)
             self._driver.implicitly_wait(5)
-            # in case we need to run multiple sessions
-            if session:  self._driver.session_id = session
-            self.session = self._driver.session_id
-            if not site_url: raise ValueError
-            self.site_url = site_url
+            if session:  
+                self._driver.session_id = session
+            else:
+                self.session = self._driver.session_id
+            # need to manually construct the url or it will fail with malformed URL
             if 'https' not in self.site_url: self.site_url = 'https://' + self.site_url
             if '.com' not in self.site_url: self.site_url = self.site_url + '.com'
 

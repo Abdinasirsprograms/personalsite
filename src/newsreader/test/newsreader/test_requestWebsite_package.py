@@ -13,7 +13,7 @@ class SaveWebsiteContent(SimpleTestCase):
         await communicator.send_to(text_data="google.com")
         response = await communicator.receive_from()
         print("*"*40, '\n','\n')
-        print(f'TEST CLIENT RESPONSE TYPE RECIEVED: {type(response)}')
+        print(f'TEST CLIENT RESPONSE TYPE RECIEVED: {response}')
         print("*"*40, '\n','\n')
         assert response
         await communicator.send_to(text_data=SAFE_WORD)

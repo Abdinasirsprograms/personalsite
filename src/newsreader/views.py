@@ -13,7 +13,6 @@ from newsreader.pull_site_data import requestWebsite
 from .models import Article_links, Article_site
 
 logging.basicConfig(level=logging.DEBUG) # Here
-import asyncio
 
 
 
@@ -24,39 +23,49 @@ class websiteConsumer(AsyncJsonWebsocketConsumer):
             self.requestObjectCreated = False
             super().__init__(*args, **kwargs)
 
-
-
-        async def websocket_connect(self, message):
+        def websocket_connect(self, message):
                 print('Accpeting connection...')
-                return await self.accept()
+                return self.accept()
 
-        # TODO:
-        '''
-        when you get the first message ->
-                create requestobject with URL ->
-                .... {
-                        send getPage request ->
-                                do what you gotta do 🔃
-                        <- send shutDown request
-                } ....
-                                maybe wrap in a manager like IO???
-        '''
 
         async def websocket_receive(self, message):
-                url = message.get('text')
-                if url != 'CLOSE_CONNECTION':
-                        self.requestObj = requestWebsite()
-                        self.requestObj.startEngine(url)
-                        await self.send_json(self.requestObj.getPage())
-                        
+                url = message.get('text').strip()
+                close_connection = bool(url == 'CLOSE_CONNECTION')
+
+                if close_connection: return await self.closeConnection()
+
+                url_is_empty = bool(len(url) == 0)
+                if url_is_empty: 
+                        await self.send_json('Error, empty URL recieved!')
+                        return  await self.closeConnection(3000) 
                 else:
-                        await self.send_json('closing connection....')
-                        try:
-                                self.requestObj.shutDown()
-                        except AttributeError:
-                                # this is to avoid a race condition in case requestObj hasn't been created
-                                pass
-                        await self.close()
+                        if self.startEngine(url) == False: 
+                                await self.send_json('start Engine Failure!')
+                                return await close_connection(3000)
+                        else:
+                                response = self.getContent()
+                                if response == False: 
+                                        await self.send_json('start Engine Failure!')
+                                        return await close_connection(3000)
+                                else:
+                                        return await self.send_json(response)
+
+        def startEngine(self, url):        
+                self.requestObj = requestWebsite()
+                self.requestObj.startEngine(url)
+
+        def getContent(self):
+                return self.requestObj.getPage()
+
+        async def closeConnection(self, code=1000):
+                await self.send_json('closing connection....')
+                try:
+                        self.requestObj.shutDown()
+                except AttributeError:
+                        # this is to avoid a race condition in case requestObj hasn't been created
+                        self.send_json("Engine wasn't started properly!!")
+                        pass
+                return await self.close(code)    
 
         def websocket_disconnect(self, code):
                 print('Disconnecting...')
