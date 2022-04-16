@@ -1,12 +1,12 @@
 <template>
 <div>
-  <input type="url" v-model="payload.site_url" @keyup.enter="send_payload()">
+  <input type="url" id="myInput" v-model="payload.site_url" @keyup.enter="send_payload()">
   <!-- <input type="text" v-model="payload.site_url" @keyup.enter="getData(payload)"> -->
   <br>
   <div>
   </div>
-  <button v-if ="connected || recieved_html_response" @click="close_connection()">Close connection</button>
-  <button v-else  @click="send_payload()">+ Add website</button>
+  <button class="myButton" v-if ="connected || recieved_html_response" @click="close_connection()">Close connection</button>
+  <button class="myButton" v-else  @click="send_payload()">+ Add website</button>
   <div v-if="recieved_html_response">
     <h1>Message recieved from server : </h1>
     <div v-html="recieved_html_response"></div>

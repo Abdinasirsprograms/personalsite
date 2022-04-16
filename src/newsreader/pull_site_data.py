@@ -1,8 +1,8 @@
 import collections
 import datetime
 
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
-
 from newsreader.models import Article_links, Article_site
 
 
@@ -27,7 +27,7 @@ class requestWebsite:
             self._option.headless = True
             self._option.javascriptEnabled = False
             self._driver = webdriver.Firefox(options = self._option)
-            self._driver.implicitly_wait(5)
+            self._driver.implicitly_wait(30)
             if session:  
                 self._driver.session_id = session
             else:
@@ -47,6 +47,7 @@ class requestWebsite:
             try:
                 driver = self._driver
                 driver.get(self.site_url)
+                WebDriverWait(driver, 30)
                 response = driver.page_source
                 print(f'sending page source as str {type(response)}')
                 return response
