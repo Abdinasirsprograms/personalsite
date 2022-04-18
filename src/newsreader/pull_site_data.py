@@ -14,8 +14,60 @@ each and every instance of requestWebsite object ??
 2.  website save page should save CSS and ignore JS
 
 3. Object should be able to be created and destroyed without sideffects!!
+
+
 '''
+
+class Webdriver:
+    '''
+    handler for webdriver as well as all options
+    
+    '''
+    def __init__(self, session=None) -> None:
+        self.options = webdriver.firefox.options.Options()
+        self.options.headless = True
+        self.options.javascriptEnabled = False
+        self._driver = ''
+        self.session = session
+
+    def shutDown(self):
+        try:
+            self._driver.quit()
+        except Exception as e:
+            print(e)
+            return False
+    
+    def startSession(self):
+            if self.session: 
+                self._driver.session_id = self.session
+                self._driver = webdriver.Firefox(options = self.options)
+            else:
+                self._driver = webdriver.Firefox(options = self.options)
+                self.session = self._driver.session_id
+            self._driver.implicitly_wait(30)
+
+    def getPage(self, site_url):
+        try:
+            self._driver.get(site_url)
+            WebDriverWait(self._driver, 30)
+            response = self._driver.page_source
+            print(f'sending page source as str {type(response)}')
+            return response
+        except Exception as e:
+            print('trying to get the page source -_- \n','*'*40) 
+            print(e)
+            print('\n' + '*'*40)
+            self.shutDown()
+            return False
+
+    def __del__(self):
+        pass
+
 class requestWebsite:
+        def __init__(self) -> None:
+            self.site_url = ''
+            self.session = ''
+
         def startEngine(self, site_url, session=None):
             site_url_empty = bool(len(site_url.strip()) == 0)
             if site_url_empty: 
@@ -23,40 +75,21 @@ class requestWebsite:
             else:
                 self.site_url = site_url
             print('initializing webdriver')
-            self._option = webdriver.firefox.options.Options()
-            self._option.headless = True
-            self._option.javascriptEnabled = False
-            self._driver = webdriver.Firefox(options = self._option)
-            self._driver.implicitly_wait(30)
-            if session:  
-                self._driver.session_id = session
-            else:
-                self.session = self._driver.session_id
             # need to manually construct the url or it will fail with malformed URL
             if 'https' not in self.site_url: self.site_url = 'https://' + self.site_url
             if '.com' not in self.site_url: self.site_url = self.site_url + '.com'
-
-        def shutDown(self):
-            try:
-                self._driver.quit()
-            except Exception as e:
-                print(e)
-                return False
+            if session:  
+                self.driver = Webdriver(session)
+            else:
+                self.driver = Webdriver()
+                self.session = self.driver.session
+            self.driver.startSession()
 
         def getPage(self):
-            try:
-                driver = self._driver
-                driver.get(self.site_url)
-                WebDriverWait(driver, 30)
-                response = driver.page_source
-                print(f'sending page source as str {type(response)}')
-                return response
-            except Exception as e:
-                print('trying to get the page source -_- \n','*'*40) 
-                print(e)
-                print('\n' + '*'*40)
-                self.shutDown()
-                return False
+            return self.driver.getPage(self.site_url)
+
+
+
 
 
 
